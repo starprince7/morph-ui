@@ -107,16 +107,94 @@ export default async function HomePage() {
           />
         </section>
 
-        {/* Navigation */}
-        <section className="flex gap-4 justify-center">
-          <Link 
-            href="/components" 
-            className="inline-flex items-center px-4 py-2 border border-black/[.08] dark:border-white/[.145] rounded-lg text-sm font-medium text-black dark:text-white hover:bg-black/[.05] dark:hover:bg-white/[.06] transition-colors"
-          >
-            View Components
-          </Link>
-          <Link 
-            href="/docs" 
+        {/* Features Navigation */}
+        <section className="mb-12">
+          <h2 className="text-xl font-semibold text-black dark:text-white mb-6 text-center">
+            Explore AI Features
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
+            <Link
+              href="/ai-landing"
+              className="group p-4 border border-black/[.08] dark:border-white/[.145] rounded-lg hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] transition-colors"
+            >
+              <div className="flex items-center gap-3 mb-2">
+                <div className="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center">
+                  <svg className="w-4 h-4 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6-4h6m2 5.291A7.962 7.962 0 0112 15c-2.34 0-4.29-1.009-5.824-2.562M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                </div>
+                <h3 className="font-medium text-black dark:text-white group-hover:underline">
+                  AI Landing Pages
+                </h3>
+              </div>
+              <p className="text-sm text-black/60 dark:text-white/60">
+                Dynamic landing pages generated with AI for different industries and use cases
+              </p>
+            </Link>
+            
+            <Link
+              href="/components"
+              className="group p-4 border border-black/[.08] dark:border-white/[.145] rounded-lg hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] transition-colors"
+            >
+              <div className="flex items-center gap-3 mb-2">
+                <div className="w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
+                  <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                  </svg>
+                </div>
+                <h3 className="font-medium text-black dark:text-white group-hover:underline">
+                  UI Components
+                </h3>
+              </div>
+              <p className="text-sm text-black/60 dark:text-white/60">
+                Design system components with variants, sizes, and comprehensive documentation
+              </p>
+            </Link>
+            
+            <Link
+              href="/secure-ai-demo"
+              className="group p-4 border border-black/[.08] dark:border-white/[.145] rounded-lg hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] transition-colors"
+            >
+              <div className="flex items-center gap-3 mb-2">
+                <div className="w-8 h-8 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center">
+                  <svg className="w-4 h-4 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                  </svg>
+                </div>
+                <h3 className="font-medium text-black dark:text-white group-hover:underline">
+                  Secure AI Demo
+                </h3>
+              </div>
+              <p className="text-sm text-black/60 dark:text-white/60">
+                AI-generated content rendered securely using react-runner with dynamic data fetching
+              </p>
+            </Link>
+            
+            <Link
+              href="/api-endpoint-test"
+              className="group p-4 border border-black/[.08] dark:border-white/[.145] rounded-lg hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] transition-colors"
+            >
+              <div className="flex items-center gap-3 mb-2">
+                <div className="w-8 h-8 rounded-full bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center">
+                  <svg className="w-4 h-4 text-orange-600 dark:text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z" />
+                  </svg>
+                </div>
+                <h3 className="font-medium text-black dark:text-white group-hover:underline">
+                  Dynamic API Test
+                </h3>
+              </div>
+              <p className="text-sm text-black/60 dark:text-white/60">
+                Test AI component generation with different API endpoints (JSONPlaceholder demo)
+              </p>
+            </Link>
+          </div>
+        </section>
+
+        {/* Documentation Link */}
+        <section className="text-center">
+          <Link
+            href="/docs"
             className="inline-flex items-center px-4 py-2 bg-black dark:bg-white text-white dark:text-black rounded-lg text-sm font-medium hover:bg-black/90 dark:hover:bg-white/90 transition-colors"
           >
             Documentation
