@@ -38,8 +38,6 @@ export default function HomePage() {
       <footer className="border-t border-black/[.08] dark:border-white/[.145] mt-auto">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-xs text-black/40 dark:text-white/40">
-            <span>Powered by OpenAI & Next.js v15</span>
-            <span className="hidden sm:inline">•</span>
             <span>MorphUI &copy; 2025</span>
           </div>
         </div>

@@ -2,11 +2,12 @@
 import { SecurityValidationResult } from './types';
 
 // Refined dangerous patterns focusing on actual security threats
+// Fixed dangerous patterns - more precise to avoid false positives
 const DANGEROUS_PATTERNS = [
   /eval\s*\(/gi,
   /Function\s*\(/gi,
-  /setTimeout\s*\(\s*['"`]/gi,        // Only string-based setTimeout (not function-based)
-  /setInterval\s*\(\s*['"`]/gi,       // Only string-based setInterval (not function-based)
+  /setTimeout\s*\(\s*['"`]/gi,        // Only string-based setTimeout
+  /setInterval\s*\(\s*['"`]/gi,       // Only string-based setInterval
   /document\.write/gi,
   /document\.cookie/gi,
   /window\.open/gi,
@@ -14,16 +15,16 @@ const DANGEROUS_PATTERNS = [
   /process\./gi,
   /require\s*\(/gi,
   /XMLHttpRequest/gi,
-  /localStorage/gi,                   // Not supported in Claude artifacts
-  /sessionStorage/gi,                 // Not supported in Claude artifacts
+  /localStorage/gi,
+  /sessionStorage/gi,
   /indexedDB/gi,
   /navigator\.geolocation/gi,
   /__dirname/gi,
   /__filename/gi,
-  /fs\./gi,
-  /path\./gi,
-  /os\./gi,
-  /crypto\./gi,
+  /\bfs\./gi,                        // Word boundary to avoid "transform" etc.
+  /\bpath\./gi,                      // Word boundary to avoid "pathname" etc.
+  /\bos\./gi,                        // FIXED: Word boundary to avoid "repos", "photos" etc.
+  /\bcrypto\./gi,                    // Word boundary to avoid "cryptocurrency" etc.
   /child_process/gi,
   /innerHTML\s*=/gi,
   /outerHTML\s*=/gi,
@@ -75,7 +76,7 @@ export function validateComponentCode(code: string): SecurityValidationResult {
 
   // RELAXED VALIDATION: Don't require 'use client' for react-runner
   // react-runner handles hooks through scope, so 'use client' is not needed
-  
+
   // RELAXED VALIDATION: More lenient JSX structure validation
   const openTags = (code.match(/\<[a-zA-Z][^>]*[^\/]>/g) || []).length;
   const closeTags = (code.match(/\<\/[a-zA-Z][^>]*>/g) || []).length;
@@ -113,14 +114,14 @@ function sanitizeCode(code: string): string {
   // Only remove markdown code blocks
   sanitized = sanitized.replace(/^```[a-zA-Z]*\n?/gm, '');
   sanitized = sanitized.replace(/\n?```$/gm, '');
-  
+
   // Remove import/export for react-runner
   sanitized = sanitized.replace(/^export\s+(default\s+)?/gm, '');
   sanitized = sanitized.replace(/^import\s+.*$/gm, '');
-  
+
   // Remove 'use client'
   sanitized = sanitized.replace(/^['"]use client['"];?\s*$/gm, '');
-  
+
   return sanitized.trim();
 }
 
@@ -132,10 +133,10 @@ export function createSafeExecutionContext() {
   // For react-runner, we don't need to import React here
   // The scope is passed directly to the Runner component
   // This function can be used for other execution contexts if needed
-  
+
   try {
     const React = require('react');
-    
+
     return {
       React,
       useState: React.useState,
@@ -162,7 +163,7 @@ export function createSafeExecutionContext() {
 export function createReactRunnerScope() {
   try {
     const React = require('react');
-    
+
     return {
       React,
       useState: React.useState,

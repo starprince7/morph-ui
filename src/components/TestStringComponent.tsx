@@ -1,19 +1,20 @@
 export const TestStringComponent = `
 function GeneratedDataComponent() {
-  const [data, setData] = useState([]);
+  const [repos, setRepos] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchRepos = async () => {
       try {
-        setLoading(true);
-        const response = await fetch('/api/get-data?endpoint=' + encodeURIComponent('https:
+        const response = await fetch(
+          '/api/get-data?endpoint=' + encodeURIComponent('https://api.github.com/users/octocat/repos')
+        );
         if (!response.ok) {
-          throw new Error('Failed to fetch data');
+          throw new Error('Failed to fetch repositories');
         }
         const result = await response.json();
-        setData(result.data || []);
+        setRepos(result.data || []);
       } catch (err) {
         setError(err.message);
       } finally {
@@ -21,45 +22,51 @@ function GeneratedDataComponent() {
       }
     };
 
-    fetchData();
+    fetchRepos();
   }, []);
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center min-h-screen">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
-        <span className="ml-4 text-lg">Loading...</span>
+      <div className="flex items-center justify-center min-h-screen p-8">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500"></div>
+        <span className="ml-3 text-lg">Loading repositories...</span>
       </div>
     );
   }
 
   if (error) {
     return (
-      <div className="p-4 bg-red-50 border border-red-200 rounded-md">
+      <div className="p-4 bg-red-50 border border-red-200 rounded max-w-md mx-auto mt-8">
         <p className="text-red-600">Error: {error}</p>
       </div>
     );
   }
 
-  if (data.length === 0) {
+  if (repos.length === 0) {
     return (
-      <div className="p-4 text-center">
-        <p className="text-gray-600">No posts available.</p>
+      <div className="p-4 bg-gray-50 border border-gray-200 rounded max-w-md mx-auto mt-8">
+        <p className="text-gray-600">No repositories found.</p>
       </div>
     );
   }
 
   return (
-    <div className="p-6 bg-gray-100 min-h-screen">
-      <h1 className="text-2xl font-bold mb-4 text-gray-800">Posts</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {data.map((post) => (
-          <div key={post.id} className="bg-white p-5 rounded-lg shadow-md">
-            <h2 className="text-xl font-semibold text-gray-900">{post.title}</h2>
-            <p className="text-gray-700 mt-2">{post.body}</p>
-          </div>
+    <div className="p-4 max-w-2xl mx-auto">
+      <h1 className="text-2xl font-bold text-gray-900 text-center mb-4">Octocat's Repositories</h1>
+      <ul className="space-y-4">
+        {repos.map((repo) => (
+          <li key={repo.id} className="border rounded p-4 bg-white shadow hover:shadow-md transition">
+            <a href={repo.html_url} target="_blank" rel="noopener noreferrer" className="block">
+              <h2 className="text-xl font-semibold text-blue-600">{repo.name}</h2>
+              <p className="text-gray-700 mt-1">{repo.description || 'No description available'}</p>
+              <div className="flex items-center mt-2">
+                <span className="text-sm text-gray-500 mr-4">Stars: {repo.stargazers_count}</span>
+                <span className="text-sm text-gray-500">Forks: {repo.forks_count}</span>
+              </div>
+            </a>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 }
