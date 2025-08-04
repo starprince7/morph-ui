@@ -17,7 +17,7 @@ const inputVariants = cva(
         default: "h-10 px-3",
         lg: "h-12 px-4 text-base"
       }
-    },
+    } as const,
     defaultVariants: {
       variant: "default",
       size: "default"
@@ -26,7 +26,7 @@ const inputVariants = cva(
 );
 
 export interface InputProps
-  extends React.InputHTMLAttributes<HTMLInputElement>,
+  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'>,
     VariantProps<typeof inputVariants> {}
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
