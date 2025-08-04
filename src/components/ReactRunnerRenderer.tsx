@@ -92,10 +92,10 @@ export default function ReactRunnerRenderer({
         
         <div className="mb-4 p-4 border border-green-200 rounded">
           <h3 className="text-sm font-bold mb-2">React Runner Test:</h3>
-          {/* <Runner
+          <Runner
             code={TestStringComponent}
             scope={scope}
-          /> */}
+          />
         </div>
         
         <div className="p-4 border border-gray-200 rounded">

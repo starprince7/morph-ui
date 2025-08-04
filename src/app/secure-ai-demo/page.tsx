@@ -19,14 +19,11 @@ async function generateSecureAIComponent() {
   try {
     console.log("🚀 Starting secure AI component generation demo...");
 
-    // Use the data fetcher that integrates with existing generateAIComponent
-    // You can pass a custom API endpoint here:
-    // apiEndpoint: 'https://your-custom-api.com/endpoint'
     const result = await fetchAiGeneratedUiComponent({
       cacheKey: "secure-demo-component",
       revalidate: 300, // 5 minutes
       fallbackOnError: true,
-      apiEndpoint: apiEndpoint, // Custom endpoint (optional)
+      apiEndpoint: apiEndpoint,
     });
 
     console.log("✅ Secure AI generation result:", {
@@ -116,35 +113,6 @@ export default async function SecureAIDemoPage() {
 
       {/* Main Content */}
       <main className="max-w-6xl mx-auto px-4 py-8">
-        {/* Status Information */}
-        <div className="mb-8 p-4 rounded-lg border border-black/[.08] dark:border-white/[.145]">
-          <div className="flex items-center justify-between">
-            <div>
-              <h3 className="font-medium text-black dark:text-white">
-                Generation Status
-              </h3>
-              <p className="text-sm text-black/60 dark:text-white/60">
-                {result.success
-                  ? "AI component generated successfully and ready for secure rendering"
-                  : "AI generation failed - showing fallback content"}
-              </p>
-            </div>
-            <div
-              className={`px-3 py-1 rounded-full text-xs font-medium ${
-                result.success
-                  ? "bg-green-100 dark:bg-green-900/20 text-green-800 dark:text-green-200"
-                  : "bg-red-100 dark:bg-red-900/20 text-red-800 dark:text-red-200"
-              }`}
-            >
-              {result.success ? "Success" : "Error"}
-            </div>
-          </div>
-          {result.error && (
-            <div className="mt-3 p-3 bg-red-50 dark:bg-red-900/20 rounded text-sm text-red-700 dark:text-red-300">
-              <strong>Error:</strong> {result.error}
-            </div>
-          )}
-        </div>
 
         {/* Secure AI Component Renderer */}
         <div className="border border-black/[.08] dark:border-white/[.145] rounded-lg overflow-hidden">

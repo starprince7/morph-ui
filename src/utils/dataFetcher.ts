@@ -1,12 +1,18 @@
 import 'server-only';
 import { generateAIComponent } from '@/lib/ai-generator';
 import { AIComponentResponse } from '@/lib/types';
+import SessionManager from '@/lib/session-manager';
+import AIResponseCache from '@/lib/ai-response-cache';
+import logger from '@/utils/logger';
 
 export interface DataFetchOptions {
   cacheKey?: string;
   revalidate?: number;
   fallbackOnError?: boolean;
   apiEndpoint: string;
+  sessionId?: string;
+  enableCaching?: boolean;
+  cacheTtlHours?: number;
 }
 
 export interface DataFetchResult {
@@ -17,8 +23,8 @@ export interface DataFetchResult {
 }
 
 /**
- * Fetches data and generates AI component only when data fetching is successful
- * This is the main integration point with the existing generateAIComponent function
+ * Fetches data and generates AI component with session management and database caching
+ * This is the main integration point with caching and session management
  */
 export async function fetchAiGeneratedUiComponent(
   options: DataFetchOptions
@@ -27,32 +33,131 @@ export async function fetchAiGeneratedUiComponent(
     cacheKey = 'default-data-fetch',
     revalidate = 300,
     fallbackOnError = true,
-    apiEndpoint
+    apiEndpoint,
+    enableCaching = true,
+    cacheTtlHours = 24
   } = options;
 
   try {
-    console.log('🚀 Starting data fetch and AI generation flow...');
+    logger.info('🚀 Starting data fetch and AI generation flow...', {
+      apiEndpoint,
+      cacheKey,
+      enableCaching
+    });
 
-    // Use the existing generateAIComponent function which handles:
-    // 1. Data fetching from external API
-    // 2. AI component generation
-    // 3. Security validation
-    // 4. Error handling and fallbacks
+    // Step 1: Get or generate session ID (compatible with Server Components)
+    const sessionManager = SessionManager.getInstance();
+    let sessionId = options.sessionId;
+    
+    if (!sessionId) {
+      // Try to get existing session from cookies
+      const existingSessionId = await sessionManager.getSessionId();
+      
+      // If no session exists, generate a temporary one for this request
+      if (existingSessionId) {
+        sessionId = existingSessionId;
+      } else {
+        sessionId = sessionManager.generateSessionId();
+        logger.info('Generated temporary session for request', { sessionId });
+      }
+    }
+    
+    // Step 2: Store API endpoint for this session
+    sessionManager.storeApiEndpointForSession(sessionId, apiEndpoint, cacheKey);
+    
+    // Step 3: Check cache if enabled
+    if (enableCaching) {
+      logger.info('🔍 Checking database cache before AI API call...', {
+        apiEndpoint,
+        sessionId,
+        cacheKey
+      });
+      
+      const cache = AIResponseCache.getInstance();
+      const cacheResult = await cache.getCachedResponse({
+        sessionId,
+        cacheKey,
+        apiEndpoint,
+        ttlHours: cacheTtlHours
+      });
+      
+      if (cacheResult.found && cacheResult.data) {
+        logger.info('✅ CACHE HIT - Found existing AI response in database! No AI API call needed.', {
+          apiEndpoint,
+          sessionId,
+          cacheKey,
+          accessCount: cacheResult.metadata?.accessCount,
+          createdAt: cacheResult.metadata?.createdAt
+        });
+        
+        return {
+          success: true,
+          data: cacheResult.data.metadata?.dataSource !== 'fallback' ? 'API data available (cached)' : null,
+          aiResponse: cacheResult.data,
+        };
+      }
+      
+      logger.info('❌ CACHE MISS - No existing AI response found in database. Will generate new one.', { 
+        apiEndpoint, 
+        sessionId,
+        cacheKey 
+      });
+    } else {
+      logger.info('⚠️ Caching disabled - skipping database check', { apiEndpoint });
+    }
+
+    // Step 4: Generate new AI component using existing function
+    logger.info('🤖 Making AI API call to generate new component...', {
+      apiEndpoint,
+      sessionId,
+      cacheKey
+    });
+    
     const aiResponse = await generateAIComponent({
       cacheKey,
       revalidate,
-      apiEndpoint
+      apiEndpoint,
+      sessionId,
+      enableCaching,
+      cacheTtlHours
     });
 
+    // Step 5: Store in cache if successful and caching is enabled
+    if (aiResponse.success && enableCaching) {
+      logger.info('💾 Storing new AI response in database cache...', {
+        apiEndpoint,
+        sessionId,
+        cacheKey,
+        ttlHours: cacheTtlHours
+      });
+      
+      const cache = AIResponseCache.getInstance();
+      const cacheStored = await cache.storeCachedResponse(
+        {
+          sessionId,
+          cacheKey,
+          apiEndpoint,
+          ttlHours: cacheTtlHours
+        },
+        aiResponse
+      );
+      
+      if (cacheStored) {
+        logger.info('✅ AI response cached successfully', { apiEndpoint, sessionId });
+      } else {
+        logger.warn('⚠️ Failed to cache AI response', { apiEndpoint, sessionId });
+      }
+    }
+
     if (aiResponse.success) {
-      console.log('✅ Data fetch and AI generation successful');
+      logger.info('✅ Data fetch and AI generation successful');
       return {
         success: true,
         data: aiResponse.metadata?.dataSource !== 'fallback' ? 'API data available' : null,
         aiResponse,
       };
     } else {
-      console.warn('⚠️ AI generation failed, using fallback');
+      logger.warn('⚠️ AI generation failed, using fallback');
       return {
         success: fallbackOnError,
         data: null,
@@ -61,7 +166,7 @@ export async function fetchAiGeneratedUiComponent(
       };
     }
   } catch (error) {
-    console.error('❌ Data fetch and AI generation failed:', error);
+    logger.error('❌ Data fetch and AI generation failed:', error);
     
     const errorMessage = error instanceof Error ? error.message : 'Unknown error';
     

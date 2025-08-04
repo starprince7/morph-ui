@@ -108,73 +108,19 @@ export function validateComponentCode(code: string): SecurityValidationResult {
  * Updated for react-runner compatibility
  */
 function sanitizeCode(code: string): string {
-  // Remove code block markers that AI might include
-  let sanitized = code.replace(/^```[a-zA-Z]*\n?/gm, '');
+  let sanitized = code;
+
+  // Only remove markdown code blocks
+  sanitized = sanitized.replace(/^```[a-zA-Z]*\n?/gm, '');
   sanitized = sanitized.replace(/\n?```$/gm, '');
-  sanitized = sanitized.replace(/^```\n?/gm, '');
-  sanitized = sanitized.replace(/\n?```/gm, '');
   
-  // Remove comments that might contain dangerous code
-  sanitized = sanitized.replace(/\/\*[\s\S]*?\*\//g, '');
-  sanitized = sanitized.replace(/\/\/.*$/gm, '');
-
-  // UPDATED: More flexible component extraction for react-runner
-  // Look for the GeneratedDataComponent function and extract it
-  const functionMatch = sanitized.match(/(function\s+GeneratedDataComponent\s*\([^)]*\)\s*\{[\s\S]*)/);
-  if (functionMatch) {
-    let functionCode = functionMatch[1];
-    
-    // Find the matching closing brace for the function
-    let braceCount = 0;
-    let endIndex = -1;
-    let inString = false;
-    let stringChar = '';
-    
-    for (let i = functionCode.indexOf('{'); i < functionCode.length; i++) {
-      const char = functionCode[i];
-      const prevChar = i > 0 ? functionCode[i - 1] : '';
-      
-      // Handle string literals
-      if ((char === '"' || char === "'" || char === '`') && prevChar !== '\\') {
-        if (!inString) {
-          inString = true;
-          stringChar = char;
-        } else if (char === stringChar) {
-          inString = false;
-          stringChar = '';
-        }
-      }
-      
-      // Count braces only when not in strings
-      if (!inString) {
-        if (char === '{') {
-          braceCount++;
-        } else if (char === '}') {
-          braceCount--;
-          if (braceCount === 0) {
-            endIndex = i;
-            break;
-          }
-        }
-      }
-    }
-    
-    if (endIndex !== -1) {
-      sanitized = functionCode.substring(0, endIndex + 1);
-    }
-  }
-
-  // UPDATED: Don't automatically add 'use client' for react-runner
-  // react-runner doesn't need this directive and it might cause issues
-  
-  // UPDATED: Clean up any remaining export/import statements for react-runner
+  // Remove import/export for react-runner
   sanitized = sanitized.replace(/^export\s+(default\s+)?/gm, '');
   sanitized = sanitized.replace(/^import\s+.*$/gm, '');
   
-  // Remove empty lines created by cleaning
-  sanitized = sanitized.replace(/^\s*$/gm, '').replace(/\n\n+/g, '\n\n');
-
-  console.log('Sanitized code for react-runner:', sanitized);
+  // Remove 'use client'
+  sanitized = sanitized.replace(/^['"]use client['"];?\s*$/gm, '');
+  
   return sanitized.trim();
 }
 

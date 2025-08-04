@@ -8,12 +8,12 @@ function GeneratedDataComponent() {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const response = await fetch('https://api.starprince.dev/api/vehicle/listing');
+        const response = await fetch('/api/get-data?endpoint=' + encodeURIComponent('https:
         if (!response.ok) {
           throw new Error('Failed to fetch data');
         }
         const result = await response.json();
-        setData(result);
+        setData(result.data || []);
       } catch (err) {
         setError(err.message);
       } finally {
@@ -26,60 +26,37 @@ function GeneratedDataComponent() {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-screen">
+      <div className="flex items-center justify-center min-h-screen">
         <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
-        <span className="ml-4 text-lg font-medium">Loading...</span>
+        <span className="ml-4 text-lg">Loading...</span>
       </div>
     );
   }
 
   if (error) {
     return (
-      <div className="p-4 max-w-md mx-auto bg-red-100 border border-red-400 text-red-700 rounded-lg">
-        <p>Error: {error}</p>
+      <div className="p-4 bg-red-50 border border-red-200 rounded-md">
+        <p className="text-red-600">Error: {error}</p>
       </div>
     );
   }
 
   if (data.length === 0) {
     return (
-      <div className="flex items-center justify-center h-screen">
-        <p className="text-gray-500">No vehicles available at the moment.</p>
+      <div className="p-4 text-center">
+        <p className="text-gray-600">No posts available.</p>
       </div>
     );
   }
 
   return (
-    <div className="p-4 max-w-4xl mx-auto">
-      <h1 className="text-2xl font-bold mb-6 text-center">Vehicle Listings</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {data.map((vehicle) => (
-          <div key={vehicle.id} className="border rounded-lg overflow-hidden shadow-lg bg-white dark:bg-gray-800">
-            <img
-              src={vehicle.images && vehicle.images[0] ? vehicle.images[0] : '/placeholder-car.jpg'}
-              alt={\`\${vehicle.make} \${vehicle.model}\`}
-              className="w-full h-48 object-cover"
-              onError={(e) => {
-                e.target.src = '/placeholder-car.jpg';
-              }}
-            />
-            <div className="p-4">
-              <h2 className="text-xl font-semibold mb-2">
-                {vehicle.make} {vehicle.model} ({vehicle.year})
-              </h2>
-              <p className="text-gray-700 dark:text-gray-300">
-                Price per day: <span className="font-bold">$\{vehicle.rentalPricePerDay}</span>
-              </p>
-              <p className="text-gray-700 dark:text-gray-300">
-                Location: {vehicle.location?.city}, {vehicle.location?.country}
-              </p>
-              <p className="text-gray-700 dark:text-gray-300 mb-2">
-                Rating: {vehicle.rating} stars ({vehicle.reviewCount} reviews)
-              </p>
-              <button className="mt-3 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition">
-                View Details
-              </button>
-            </div>
+    <div className="p-6 bg-gray-100 min-h-screen">
+      <h1 className="text-2xl font-bold mb-4 text-gray-800">Posts</h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {data.map((post) => (
+          <div key={post.id} className="bg-white p-5 rounded-lg shadow-md">
+            <h2 className="text-xl font-semibold text-gray-900">{post.title}</h2>
+            <p className="text-gray-700 mt-2">{post.body}</p>
           </div>
         ))}
       </div>

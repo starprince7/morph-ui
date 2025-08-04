@@ -28,6 +28,9 @@ export interface ComponentGenerationOptions {
   revalidate?: number;
   fallbackComponent?: string;
   apiEndpoint: string;
+  sessionId?: string;
+  enableCaching?: boolean;
+  cacheTtlHours?: number;
 }
 
 // Landing page specific types

@@ -57,11 +57,12 @@ function generateFallbackComponent(data: any, apiEndpoint: string): string {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const response = await fetch('` + apiEndpoint + `');
+        const response = await fetch('/api/get-data?endpoint=' + encodeURIComponent('` + apiEndpoint + `'));
         if (!response.ok) {
           throw new Error('Failed to fetch data from API');
         }
         const result = await response.json();
+        // Handle the response structure from /api/get-data
         setData(result.data || result);
       } catch (err) {
         console.error('Fetch error:', err);
@@ -207,7 +208,9 @@ function generateFallbackComponent(data: any, apiEndpoint: string): string {
       )}
     </div>
   );
-}`;
+}
+
+export default GeneratedDataComponent;`;
 }
 
 /**
@@ -231,13 +234,20 @@ async function generateAiCode(data: any, apiEndpoint: string): Promise<string> {
           role: 'user',
           content: `Generate a React component that fetches and displays data from this API endpoint:
 
-API Endpoint: ${apiEndpoint}
+Original API Endpoint: ${apiEndpoint}
 
-Sample data structure (for reference only - fetch from API):
+IMPORTANT: You must fetch data using the proxy route:
+/api/get-data?endpoint=${encodeURIComponent(apiEndpoint)}
+
+NEVER call the original endpoint directly. Always use the /api/get-data proxy.
+
+Sample data structure (for reference only - the actual data will be fetched from /api/get-data):
 ${JSON.stringify(data, null, 2)}
 
 Create a component that:
-- Fetches data from the API endpoint using useEffect and fetch()
+- Fetches data from '/api/get-data?endpoint=' + encodeURIComponent('${apiEndpoint}') using useEffect and fetch()
+- Handles the response structure: { data: actualData, metadata: { source, timestamp, status } }
+- Extracts the actual data from response.data field
 - Includes proper loading states while fetching
 - Handles errors gracefully with user-friendly error messages
 - Displays the data in an organized, visually appealing way
@@ -245,7 +255,9 @@ Create a component that:
 - Uses proper Tailwind CSS styling
 - Follows accessibility best practices
 - Has interactive elements where appropriate
-- Shows empty state if no data is returned`,
+- Shows empty state if no data is returned
+
+Remember: Use '/api/get-data?endpoint=' + encodeURIComponent('${apiEndpoint}') for the fetch URL.`,
         },
       ],
       temperature: 0.7,
@@ -278,8 +290,8 @@ export async function generateAIComponent(options: ComponentGenerationOptions): 
 
     // Step 2: Generate component code using AI
     console.log('Generating component code...');
-    const endpointGenerateCodeShouldFetchDataFrom = '/api/get-data' // This is to tell AI about the endpoint to fetch data from in it's generated code.
-    const componentCode = await generateAiCode(apiData.data, endpointGenerateCodeShouldFetchDataFrom);
+    // Pass the original API endpoint so AI can construct /api/get-data?endpoint=ORIGINAL_ENDPOINT
+    const componentCode = await generateAiCode(apiData.data, options.apiEndpoint);
     console.log('Component Code:', componentCode)
 
     // Step 3: Validate and sanitize the generated code

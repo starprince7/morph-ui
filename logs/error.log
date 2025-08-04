@@ -1,0 +1,6 @@
+2025-08-04 00:17:02:172 [31merror[39m: [31m❌ Data fetch and AI generation failed: Cookies can only be modified in a Server Action or Route Handler. Read more: https://nextjs.org/docs/app/api-reference/functions/cookies#options[39m
+2025-08-04 00:26:00:260 [31merror[39m: [31m❌ Data fetch and AI generation failed: Cookies can only be modified in a Server Action or Route Handler. Read more: https://nextjs.org/docs/app/api-reference/functions/cookies#options[39m
+2025-08-04 00:28:14:2814 [31merror[39m: [31m❌ Data fetch and AI generation failed: Cookies can only be modified in a Server Action or Route Handler. Read more: https://nextjs.org/docs/app/api-reference/functions/cookies#options[39m
+2025-08-04 00:28:51:2851 [31merror[39m: [31m❌ Data fetch and AI generation failed: Cookies can only be modified in a Server Action or Route Handler. Read more: https://nextjs.org/docs/app/api-reference/functions/cookies#options[39m
+2025-08-04 00:29:07:297 [31merror[39m: [31m❌ Data fetch and AI generation failed: Cookies can only be modified in a Server Action or Route Handler. Read more: https://nextjs.org/docs/app/api-reference/functions/cookies#options[39m
+2025-08-04 00:30:25:3025 [31merror[39m: [31m❌ Data fetch and AI generation failed: sessionManager.getOrCreateSessionId is not a function[39m
