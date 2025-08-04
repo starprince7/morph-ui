@@ -16,12 +16,10 @@ export interface IAiResponse {
 const aiResponseSchema = new mongoose.Schema<IAiResponse>({
     apiEndpoint: {
         type: String,
-        required: true,
-        index: true
+        required: true
     },
     sessionId: {
-        type: String,
-        index: true
+        type: String
     },
     cacheKey: {
         type: String,
