@@ -81,26 +81,6 @@ export default async function VisualizePage({ searchParams }: VisualizePageProps
       
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Header */}
-        <div className="mb-8">
-          {/* Source URL Info */}
-          <div className="p-4 rounded-lg bg-black/[.02] dark:bg-white/[.02] border border-black/[.08] dark:border-white/[.145]">
-            <div className="flex items-center gap-2 mb-2">
-              <span className="text-sm font-medium text-black dark:text-white">Data Source:</span>
-              <code className="text-xs px-2 py-1 rounded bg-black/[.05] dark:bg-white/[.06] text-black/70 dark:text-white/70">
-                {sourceUrl.source}
-              </code>
-            </div>
-            {result.aiResponse?.metadata && (
-              <div className="text-xs text-black/60 dark:text-white/60">
-                Generated: {new Date(result.aiResponse.metadata.generatedAt).toLocaleString()}
-                {' • '}
-                Source: {result.aiResponse.metadata.dataSource}
-                {result.aiResponse.metadata.dataSource === 'cache' && ' (cached)'}
-              </div>
-            )}
-          </div>
-        </div>
         
         {/* AI-Generated Component */}
         <div className="border border-black/[.08] dark:border-white/[.145] rounded-lg overflow-hidden">

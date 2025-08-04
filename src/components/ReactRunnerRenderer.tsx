@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import React, { useState, useEffect } from 'react';
-import { Runner } from 'react-runner';
-import { AIComponentResponse } from '@/lib/types';
-import { TestStringComponent } from './TestStringComponent';
+import React, { useState, useEffect } from "react";
+import { Runner } from "react-runner";
+import { AIComponentResponse } from "@/lib/types";
+import { TestStringComponent } from "./TestStringComponent";
 
 interface ReactRunnerRendererProps {
   aiResponse: AIComponentResponse;
@@ -43,16 +43,16 @@ const ErrorFallback = ({ error }: { error: string }) => (
 
 /**
  * ReactRunnerRenderer - Renders AI-generated code using react-runner
- * 
+ *
  * This component provides secure execution of AI-generated React code using:
  * - react-runner for safe code execution
  * - Proper error handling and fallbacks
  * - Loading states and error boundaries
  */
-export default function ReactRunnerRenderer({ 
-  aiResponse, 
-  data = [], 
-  className = ''
+export default function ReactRunnerRenderer({
+  aiResponse,
+  data = [],
+  className = "",
 }: ReactRunnerRendererProps) {
   const [error, setError] = useState<string | null>(null);
 
@@ -86,31 +86,21 @@ export default function ReactRunnerRenderer({
   try {
     return (
       <div className={`relative ${className}`}>
-        <div className="mb-2 p-2 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded text-xs">
-          <strong>Debug Info:</strong> React Runner executing {aiResponse.component.length} chars of code
-        </div>
-        
-        <div className="mb-4 p-4 border border-green-200 rounded">
-          <h3 className="text-sm font-bold mb-2">React Runner Test:</h3>
-          <Runner
-            code={TestStringComponent}
-            scope={scope}
-          />
-        </div>
-        
-        <div className="p-4 border border-gray-200 rounded">
-          <h3 className="text-sm font-bold mb-2">AI Generated Component:</h3>
-          <Runner
-            code={aiResponse.component}
-            scope={scope}
-          />
-        </div>
-        
+        <Runner code={aiResponse.component} scope={scope} />
+
         {error && <ErrorFallback error={error} />}
       </div>
     );
   } catch (runnerError) {
-    console.error('React Runner error:', runnerError);
-    return <ErrorFallback error={runnerError instanceof Error ? runnerError.message : String(runnerError)} />;
+    console.error("React Runner error:", runnerError);
+    return (
+      <ErrorFallback
+        error={
+          runnerError instanceof Error
+            ? runnerError.message
+            : String(runnerError)
+        }
+      />
+    );
   }
 }

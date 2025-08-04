@@ -1,29 +1,30 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { createOrGetSession } from '@/app/actions/session';
+import { useState } from "react";
+import { createOrGetSession } from "@/app/actions/session";
 
 interface URLInputFormProps {
   onSubmit?: (url: string) => void;
 }
 
 const EXAMPLE_URLS = [
-  'https://jsonplaceholder.typicode.com/posts',
-  'https://jsonplaceholder.typicode.com/users',
-  'https://api.github.com/users/octocat/repos',
-  'https://httpbin.org/json'
+  "https://api.starprince.dev/api/vehicle/listing",
+  "https://jsonplaceholder.typicode.com/posts",
+  "https://jsonplaceholder.typicode.com/users",
+  "https://api.github.com/users/octocat/repos",
+  "https://httpbin.org/json",
 ];
 
 export default function URLInputForm({ onSubmit }: URLInputFormProps) {
-  const [url, setUrl] = useState('');
+  const [url, setUrl] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
   const [isValidating, setIsValidating] = useState(false);
 
   const validateUrl = (urlString: string): boolean => {
     try {
       const url = new URL(urlString);
-      return url.protocol === 'http:' || url.protocol === 'https:';
+      return url.protocol === "http:" || url.protocol === "https:";
     } catch {
       return false;
     }
@@ -31,27 +32,27 @@ export default function URLInputForm({ onSubmit }: URLInputFormProps) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!url.trim()) {
-      setError('Please enter a URL');
+      setError("Please enter a URL");
       return;
     }
 
     if (!validateUrl(url)) {
-      setError('Please enter a valid HTTP or HTTPS URL');
+      setError("Please enter a valid HTTP or HTTPS URL");
       return;
     }
 
     setIsLoading(true);
-    setError('');
+    setError("");
     setIsValidating(true);
 
     try {
       // Validate URL accessibility
-      const response = await fetch('/api/validate-url', {
-        method: 'POST',
+      const response = await fetch("/api/validate-url", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({ url }),
       });
@@ -59,22 +60,22 @@ export default function URLInputForm({ onSubmit }: URLInputFormProps) {
       const result = await response.json();
 
       if (!result.valid) {
-        setError(result.error || 'URL is not accessible');
+        setError(result.error || "URL is not accessible");
         return;
       }
 
       // Create or get session before redirecting
       await createOrGetSession();
-      
+
       // Redirect to visualize page
       window.location.href = `/visualize?source=${encodeURIComponent(url)}`;
-      
+
       if (onSubmit) {
         onSubmit(url);
       }
     } catch (error) {
-      console.error('URL validation error:', error);
-      setError('Failed to validate URL. Please try again.');
+      console.error("URL validation error:", error);
+      setError("Failed to validate URL. Please try again.");
     } finally {
       setIsLoading(false);
       setIsValidating(false);
@@ -83,7 +84,7 @@ export default function URLInputForm({ onSubmit }: URLInputFormProps) {
 
   const handleExampleClick = (exampleUrl: string) => {
     setUrl(exampleUrl);
-    setError('');
+    setError("");
   };
 
   return (
@@ -95,7 +96,7 @@ export default function URLInputForm({ onSubmit }: URLInputFormProps) {
             value={url}
             onChange={(e) => {
               setUrl(e.target.value);
-              setError('');
+              setError("");
             }}
             placeholder="Enter your API endpoint URL..."
             className="w-full px-6 py-4 text-lg border border-black/[.08] dark:border-white/[.145] rounded-full bg-white dark:bg-black text-black dark:text-white placeholder:text-black/60 dark:placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-black/20 dark:focus:ring-white/20 focus:border-transparent transition-all duration-200"
@@ -121,7 +122,7 @@ export default function URLInputForm({ onSubmit }: URLInputFormProps) {
             disabled={isLoading || !url.trim()}
             className="px-8 py-3 bg-black dark:bg-white text-white dark:text-black rounded-full font-medium hover:bg-black/80 dark:hover:bg-white/80 focus:outline-none focus:ring-2 focus:ring-black/20 dark:focus:ring-white/20 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200"
           >
-            {isLoading ? 'Generating...' : 'Generate UI'}
+            {isLoading ? "Generating..." : "Generate UI"}
           </button>
         </div>
       </form>
@@ -139,7 +140,7 @@ export default function URLInputForm({ onSubmit }: URLInputFormProps) {
               className="px-3 py-1 text-xs bg-black/[.05] dark:bg-white/[.06] text-black/70 dark:text-white/70 rounded-full hover:bg-black/[.08] dark:hover:bg-white/[.08] transition-colors duration-200"
               disabled={isLoading}
             >
-              {exampleUrl.replace('https://', '').split('/')[0]}
+              {exampleUrl.replace("https://", "").split("/")[0]}
             </button>
           ))}
         </div>

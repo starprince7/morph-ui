@@ -43,14 +43,11 @@ class AIResponseCache {
       await this.ensureConnection();
 
       const query: any = {
-        apiEndpoint: options.apiEndpoint,
-        // cacheKey: options.cacheKey
+        apiEndpoint: options.apiEndpoint
       };
 
-      // Add session filter if provided
-      if (options.sessionId) {
-        query.sessionId = options.sessionId;
-      }
+      // Don't filter by session - use apiEndpoint as global unique identifier
+      // This allows any user to benefit from cached AI responses for the same endpoint
 
       const cachedResponse = await AiResponseModel.findOne(query)
         .sort({ createdAt: -1 }) // Get the most recent
@@ -103,20 +100,18 @@ class AIResponseCache {
 
       const cacheData: Partial<IAiResponse> = {
         apiEndpoint: options.apiEndpoint,
-        sessionId: options.sessionId,
-        cacheKey: options.cacheKey,
+        sessionId: options.sessionId, // Keep for tracking but don't use for uniqueness
+        cacheKey: options.cacheKey,   // Keep for tracking but don't use for uniqueness
         aiResponse,
         accessCount: 0,
         lastAccessedAt: new Date(),
         expiresAt
       };
 
-      // Use upsert to handle duplicates
+      // Use upsert with apiEndpoint as the only unique identifier
       await AiResponseModel.findOneAndUpdate(
         {
-          apiEndpoint: options.apiEndpoint,
-          cacheKey: options.cacheKey,
-          sessionId: options.sessionId
+          apiEndpoint: options.apiEndpoint
         },
         cacheData,
         {
@@ -141,13 +136,10 @@ class AIResponseCache {
       await this.ensureConnection();
 
       const query: any = {
-        apiEndpoint: options.apiEndpoint,
-        cacheKey: options.cacheKey
+        apiEndpoint: options.apiEndpoint
       };
 
-      if (options.sessionId) {
-        query.sessionId = options.sessionId;
-      }
+      // Use apiEndpoint as the only unique identifier for deletion
 
       await AiResponseModel.deleteOne(query);
       logger.info(`Deleted cached response for endpoint: ${options.apiEndpoint}`);

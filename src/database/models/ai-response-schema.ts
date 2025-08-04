@@ -56,9 +56,10 @@ const aiResponseSchema = new mongoose.Schema<IAiResponse>({
     collection: 'ai_responses'
 });
 
-// Compound indexes for efficient querying
-aiResponseSchema.index({ apiEndpoint: 1, sessionId: 1 });
-aiResponseSchema.index({ cacheKey: 1, apiEndpoint: 1 });
+// Unique index on apiEndpoint for global caching across all users
+aiResponseSchema.index({ apiEndpoint: 1 }, { unique: true });
+// Additional indexes for performance
 aiResponseSchema.index({ createdAt: -1 });
+aiResponseSchema.index({ sessionId: 1 }); // For session-based queries if needed
 
 export default mongoose.models.AiResponse || mongoose.model<IAiResponse>("AiResponse", aiResponseSchema);
