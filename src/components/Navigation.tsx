@@ -13,22 +13,16 @@ export default function Navigation() {
           </Link>
           <div className="flex items-center gap-6">
             <Link
-              href="/ai-landing"
+              href="/"
               className="text-sm text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-colors"
             >
-              AI Landing Pages
+              Home
             </Link>
             <Link
-              href="/components"
+              href="/visualize"
               className="text-sm text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-colors"
             >
-              Components
-            </Link>
-            <Link
-              href="/secure-ai-demo"
-              className="text-sm text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-colors"
-            >
-              Secure Demo
+              Visualize
             </Link>
           </div>
         </div>

@@ -37,6 +37,7 @@ export async function GET(request: NextRequest) {
         }
         
         const data = await response.json();
+        // console.log('Fetched data:', data);
         
         // Add metadata about the request
         return NextResponse.json({

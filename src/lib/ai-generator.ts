@@ -1,9 +1,10 @@
 // lib/ai-generator.ts
 import 'server-only';
 import OpenAI from 'openai';
+import { readFileSync } from 'fs';
+import { join } from 'path';
 import { AIComponentResponse, APIDataResponse, ComponentGenerationOptions } from './types';
 import { validateComponentCode } from './security';
-import { GPT_SYSTEM_PROMPT } from './system-prompts/gpt-system-prompt';
 
 // Initialize OpenAI client
 const openai = new OpenAI({
@@ -223,12 +224,17 @@ async function generateAiCode(data: any, apiEndpoint: string): Promise<string> {
   }
 
   try {
+    // Read the system prompt from the text file
+    const systemPromptPath = join(process.cwd(), 'src', 'lib', 'system-prompts', 'gpt-system-prompt.txt');
+    const systemPrompt = readFileSync(systemPromptPath, 'utf-8');
+
     const completion = await openai.chat.completions.create({
-      model: 'gpt-4o',
+      // model: 'gpt-4o',
+      model: 'gpt-5',
       messages: [
         {
           role: 'system',
-          content: GPT_SYSTEM_PROMPT,
+          content: systemPrompt,
         },
         {
           role: 'user',
@@ -260,8 +266,10 @@ Create a component that:
 Remember: Use '/api/get-data?endpoint=' + encodeURIComponent('${apiEndpoint}') for the fetch URL.`,
         },
       ],
-      temperature: 0.7,
-      max_tokens: 4000,
+      // temperature: 0.7,
+      // max_tokens: 4000,
+      // temperature: 1,
+      // max_completion_tokens: 4000,
     });
 
     const generatedCode = completion.choices[0].message.content;

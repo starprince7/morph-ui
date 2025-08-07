@@ -86,6 +86,7 @@ export default function ReactRunnerRenderer({
   try {
     return (
       <div className={`relative ${className}`}>
+        {/* <Runner code={TestStringComponent} scope={scope} /> */}
         <Runner code={aiResponse.component} scope={scope} />
 
         {error && <ErrorFallback error={error} />}

@@ -32,34 +32,38 @@ REACT-RUNNER SPECIFIC RULES:
 
 CRITICAL SYNTAX RULES FOR REACT-RUNNER:
 
-🚫 TEMPLATE LITERAL RESTRICTIONS (HIGHEST PRIORITY)
-- NEVER use template literals with backticks (\`) in JSX content or attributes
-- Template literals can break react-runner's sandboxed JavaScript environment
-- NEVER write: \`$\${variable}\` in JSX - this causes parsing errors
-- NEVER write: alt={\`\${make} \${model}\`} - this will fail in react-runner
+🚫 TEMPLATE LITERAL AND JSX INTERPOLATION RESTRICTIONS (HIGHEST PRIORITY)
+- NEVER use template literal syntax \\\${variable} in JSX content - this causes syntax errors
+- Template literals (backticks with \\\${}) are for JavaScript strings, NOT JSX content
+- NEVER write: <p>Price: \\\${item.price}</p> - this is invalid JSX syntax
+- ALWAYS write: <p>Price: \\\${item.price}</p> - this is correct JSX interpolation
+- JSX uses {expression} for interpolation, not \\\${expression}
+- Template literals with backticks (\`) can break react-runner's parsing
+- NEVER use backticks in JSX attributes: alt={\\\`\\\${make} \\\${model}\\\`} ❌
+- ALWAYS use concatenation in JSX: alt={make + ' ' + model} ✅
 
 ✅ CORRECT JSX PATTERNS FOR REACT-RUNNER:
-- For prices: \${item.price} (direct JSX interpolation)
+- For prices: \\\${item.price} (direct JSX interpolation)
 - For string concatenation in JSX: {item.make + ' ' + item.model}
-- For JSX text content: Price: \${item.price} per day
+- For JSX text content: Price: \\\${item.price} per day
 - For JSX attributes: alt={item.make + ' ' + item.model}
 - For conditional content: {condition ? value1 : value2}
 
 🚫 DOLLAR SIGN USAGE (HIGH PRIORITY)
 - NEVER use the dollar sign ($) as a standalone identifier or prefix outside of JSX interpolation
-- Only use $ for currency display within JSX: \${price}
+- Only use $ for currency display within JSX: \\\${price}
 - NEVER write expressions like $item.price — this will throw a JavaScript syntax error
 - NEVER write JSX like: className=$styles.container — this is invalid syntax
 
 ✅ SAFE JSX INTERPOLATION PATTERNS:
-- For prices: \${item.price} (not \`$\${item.price}\`)
+- For prices: \\\${item.price} (not \\\`$\\\${item.price}\\\`)
 - For dynamic content: {item.name} (not $item.name)
 - For CSS classes: className="text-lg font-bold" or className={dynamicClass}
 - For string concatenation: {firstName + ' ' + lastName}
 - For conditional classes: className={condition ? "class-a" : "class-b"}
 
 REACT-RUNNER SAFE CODING PATTERNS:
-- For prices: \${item.price} or {"$" + item.price}
+- For prices: \\\${item.price} or {"$" + item.price}
 - For concatenation: {item.make + ' ' + item.model}
 - For CSS classes: className="text-lg font-bold"
 - For dynamic content: {item.name}
@@ -127,7 +131,7 @@ function GeneratedDataComponent() {
       {data.map((item) => (
         <div key={item.id} className="mb-4 p-4 border rounded">
           <h2 className="text-lg font-semibold">{item.name}</h2>
-          <p className="text-gray-600">Price: \${item.price}</p>
+          <p className="text-gray-600">Price: \\\${item.price}</p>
           <button 
             onClick={() => setSelectedItem(item)}
             className="mt-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
@@ -140,7 +144,7 @@ function GeneratedDataComponent() {
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4">
           <div className="bg-white rounded-lg p-6 max-w-md w-full">
             <h3 className="text-lg font-bold mb-2">{selectedItem.name}</h3>
-            <p className="text-gray-600 mb-4">Price: \${selectedItem.price}</p>
+            <p className="text-gray-600 mb-4">Price: \\\${selectedItem.price}</p>
             <button 
               onClick={() => setSelectedItem(null)}
               className="px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-600"
@@ -187,7 +191,7 @@ RESPONSE FORMAT FOR REACT-RUNNER:
 - NO \\\`\\\`\\\`javascript or \\\`\\\`\\\` or any code fence markers
 - NO import/export statements
 - Just the single component function that can be executed by react-runner
-- The output should be ready to be used as: const componentString = \`[YOUR_OUTPUT_HERE]\`
+- The output should be ready to be used as: const componentString = \\\`[YOUR_OUTPUT_HERE]\\\`;
 - Component must be complete and self-contained
 - No truncation or cutting off of code
 - Must be valid JavaScript that can be executed in a sandboxed environment
@@ -196,7 +200,7 @@ RESPONSE FORMAT FOR REACT-RUNNER:
 
 REACT-RUNNER USAGE CONTEXT:
 The generated component will be used like this:
-\`\`\`jsx
+\\\`\\\`\\\`jsx
 import { Runner } from 'react-runner';
 
 const scope = {
@@ -208,7 +212,7 @@ const scope = {
 };
 
 <Runner code={generatedComponentString} scope={scope} />
-\`\`\`
+\\\`\\\`\\\`
 
 IMPORTANT REACT-RUNNER CONSTRAINTS:
 - The component code is executed in a sandboxed JavaScript environment
@@ -232,7 +236,7 @@ Therefore, ensure the component:
 - Uses only standard JavaScript and React patterns
 - Includes comprehensive error handling and user feedback
 - NEVER uses template literals in JSX content or attributes
-- Uses direct JSX interpolation: {variable} instead of \`\${variable}\`
+- Uses direct JSX interpolation: {variable} instead of \\\`\\\${variable}\\\`
 - Uses string concatenation for complex strings: {item.make + ' ' + item.model}
 - NEVER wraps the response in markdown code blocks or backticks
 - Returns pure JavaScript function code without any formatting wrapper

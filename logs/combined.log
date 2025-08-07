@@ -529,3 +529,496 @@
 2025-08-04 03:41:20:4120 [32minfo[39m: [32mSuccessfully connected to MongoDB.[39m
 2025-08-04 03:41:20:4120 [32minfo[39m: [32mCache hit for endpoint: https://api.github.com/users/octocat/repos[39m
 2025-08-04 03:41:20:4120 [32minfo[39m: [32m✅ CACHE HIT - Found existing AI response in database! No AI API call needed.[39m
+2025-08-04 04:15:55:1555 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 04:15:55:1555 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 04:15:55:1555 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 04:15:55:1555 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 04:15:55:1555 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 04:15:55:1555 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 04:55:32:5532 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 04:55:32:5532 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 04:55:32:5532 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 04:55:32:5532 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 04:55:32:5532 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 04:55:32:5532 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 05:12:11:1211 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 05:12:11:1211 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 05:12:11:1211 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 05:12:11:1211 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 05:12:11:1211 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 05:12:11:1211 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 06:00:31:031 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 06:00:31:031 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 06:00:32:032 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 06:00:32:032 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 06:00:32:032 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 06:00:32:032 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 07:01:32:132 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 07:01:32:132 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 07:01:32:132 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 07:01:32:132 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 07:01:33:133 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 07:01:33:133 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 07:13:44:1344 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 07:13:44:1344 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 07:13:44:1344 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 07:13:44:1344 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 07:13:44:1344 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 07:13:44:1344 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 08:02:34:234 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 08:02:34:234 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 08:02:34:234 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 08:02:34:234 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 08:02:34:234 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 08:02:34:234 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 08:53:23:5323 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 08:53:23:5323 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 08:53:23:5323 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 08:53:23:5323 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 08:53:23:5323 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 08:53:23:5323 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 09:03:35:335 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 09:03:35:335 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 09:03:35:335 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 09:03:35:335 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 09:03:35:335 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 09:03:35:335 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 10:04:36:436 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 10:04:36:436 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 10:04:36:436 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 10:04:36:436 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 10:04:36:436 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 10:04:36:436 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 11:05:37:537 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 11:05:37:537 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 11:05:37:537 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 11:05:37:537 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 11:05:37:537 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 11:05:37:537 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 11:36:41:3641 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 11:36:41:3641 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 11:36:41:3641 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 11:36:41:3641 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 11:36:41:3641 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 11:36:41:3641 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 12:06:38:638 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 12:06:38:638 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 12:06:38:638 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 12:06:38:638 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 12:06:38:638 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 12:06:38:638 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 13:07:39:739 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 13:07:39:739 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 13:07:39:739 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 13:07:39:739 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 13:07:39:739 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 13:07:39:739 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 13:52:21:5221 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 13:52:21:5221 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 13:52:21:5221 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 13:52:21:5221 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 13:52:21:5221 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 13:52:21:5221 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 13:54:54:5454 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 13:54:54:5454 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 13:54:54:5454 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 13:54:54:5454 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 13:54:54:5454 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 13:54:54:5454 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 13:57:33:5733 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 13:57:33:5733 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 13:57:33:5733 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 13:57:33:5733 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 13:57:33:5733 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 13:57:33:5733 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 14:35:13:3513 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 14:35:13:3513 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 14:35:13:3513 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 14:35:13:3513 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 14:35:13:3513 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 14:35:13:3513 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 16:44:45:4445 [32minfo[39m: [32m🚀 Starting data fetch and AI generation flow...[39m
+2025-08-04 16:44:45:4445 [32minfo[39m: [32mGenerated temporary session for request[39m
+2025-08-04 16:44:45:4445 [32minfo[39m: [32m🔍 Checking database cache before AI API call...[39m
+2025-08-04 16:44:45:4445 [32minfo[39m: [32mConnected to MongoDB![39m
+2025-08-04 16:44:45:4445 [32minfo[39m: [32mSuccessfully connected to MongoDB.[39m
+2025-08-04 16:44:45:4445 [32minfo[39m: [32mCache miss for endpoint: https://jsonplaceholder.typicode.com/posts[39m
+2025-08-04 16:44:45:4445 [32minfo[39m: [32m❌ CACHE MISS - No existing AI response found in database. Will generate new one.[39m
+2025-08-04 16:44:45:4445 [32minfo[39m: [32m🤖 Making AI API call to generate new component...[39m
+2025-08-04 16:44:57:4457 [32minfo[39m: [32m💾 Storing new AI response in database cache...[39m
+2025-08-04 16:44:57:4457 [32minfo[39m: [32mUsing existing database connection[39m
+2025-08-04 16:44:57:4457 [32minfo[39m: [32mCached AI response for endpoint: https://jsonplaceholder.typicode.com/posts[39m
+2025-08-04 16:44:57:4457 [32minfo[39m: [32m✅ AI response cached successfully[39m
+2025-08-04 16:44:57:4457 [32minfo[39m: [32m✅ Data fetch and AI generation successful[39m
+2025-08-04 16:45:27:4527 [32minfo[39m: [32m🚀 Starting data fetch and AI generation flow...[39m
+2025-08-04 16:45:27:4527 [32minfo[39m: [32mGenerated temporary session for request[39m
+2025-08-04 16:45:27:4527 [32minfo[39m: [32m🔍 Checking database cache before AI API call...[39m
+2025-08-04 16:45:27:4527 [32minfo[39m: [32mUsing existing database connection[39m
+2025-08-04 16:45:27:4527 [32minfo[39m: [32mCache hit for endpoint: https://api.starprince.dev/api/vehicle/listing[39m
+2025-08-04 16:45:27:4527 [32minfo[39m: [32m✅ CACHE HIT - Found existing AI response in database! No AI API call needed.[39m
+2025-08-04 16:46:03:463 [32minfo[39m: [32m🚀 Starting data fetch and AI generation flow...[39m
+2025-08-04 16:46:03:463 [32minfo[39m: [32mGenerated temporary session for request[39m
+2025-08-04 16:46:03:463 [32minfo[39m: [32m🔍 Checking database cache before AI API call...[39m
+2025-08-04 16:46:03:463 [32minfo[39m: [32mUsing existing database connection[39m
+2025-08-04 16:46:03:463 [32minfo[39m: [32mCache hit for endpoint: https://api.starprince.dev/api/vehicle/listing[39m
+2025-08-04 16:46:03:463 [32minfo[39m: [32m✅ CACHE HIT - Found existing AI response in database! No AI API call needed.[39m
+2025-08-04 16:48:16:4816 [32minfo[39m: [32m🚀 Starting data fetch and AI generation flow...[39m
+2025-08-04 16:48:16:4816 [32minfo[39m: [32mGenerated temporary session for request[39m
+2025-08-04 16:48:16:4816 [32minfo[39m: [32m🔍 Checking database cache before AI API call...[39m
+2025-08-04 16:48:16:4816 [32minfo[39m: [32mUsing existing database connection[39m
+2025-08-04 16:48:16:4816 [32minfo[39m: [32mCache miss for endpoint: https://app.addomusic.com/api/services[39m
+2025-08-04 16:48:16:4816 [32minfo[39m: [32m❌ CACHE MISS - No existing AI response found in database. Will generate new one.[39m
+2025-08-04 16:48:16:4816 [32minfo[39m: [32m🤖 Making AI API call to generate new component...[39m
+2025-08-04 16:48:27:4827 [32minfo[39m: [32m💾 Storing new AI response in database cache...[39m
+2025-08-04 16:48:27:4827 [32minfo[39m: [32mUsing existing database connection[39m
+2025-08-04 16:48:27:4827 [32minfo[39m: [32mCached AI response for endpoint: https://app.addomusic.com/api/services[39m
+2025-08-04 16:48:27:4827 [32minfo[39m: [32m✅ AI response cached successfully[39m
+2025-08-04 16:48:27:4827 [32minfo[39m: [32m✅ Data fetch and AI generation successful[39m
+2025-08-04 16:50:42:5042 [32minfo[39m: [32m🚀 Starting data fetch and AI generation flow...[39m
+2025-08-04 16:50:42:5042 [32minfo[39m: [32mGenerated temporary session for request[39m
+2025-08-04 16:50:42:5042 [32minfo[39m: [32m🔍 Checking database cache before AI API call...[39m
+2025-08-04 16:50:42:5042 [32minfo[39m: [32mUsing existing database connection[39m
+2025-08-04 16:50:42:5042 [32minfo[39m: [32mCache hit for endpoint: https://app.addomusic.com/api/services[39m
+2025-08-04 16:50:42:5042 [32minfo[39m: [32m✅ CACHE HIT - Found existing AI response in database! No AI API call needed.[39m
+2025-08-04 17:17:33:1733 [32minfo[39m: [32m🚀 Starting data fetch and AI generation flow...[39m
+2025-08-04 17:17:33:1733 [32minfo[39m: [32mGenerated temporary session for request[39m
+2025-08-04 17:17:33:1733 [32minfo[39m: [32m🔍 Checking database cache before AI API call...[39m
+2025-08-04 17:17:33:1733 [32minfo[39m: [32mConnected to MongoDB![39m
+2025-08-04 17:17:33:1733 [32minfo[39m: [32mSuccessfully connected to MongoDB.[39m
+2025-08-04 17:17:33:1733 [32minfo[39m: [32mCache hit for endpoint: https://app.addomusic.com/api/services[39m
+2025-08-04 17:17:33:1733 [32minfo[39m: [32m✅ CACHE HIT - Found existing AI response in database! No AI API call needed.[39m
+2025-08-04 17:18:21:1821 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 17:18:21:1821 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 17:18:55:1855 [32minfo[39m: [32m🚀 Starting data fetch and AI generation flow...[39m
+2025-08-04 17:18:55:1855 [32minfo[39m: [32mGenerated temporary session for request[39m
+2025-08-04 17:18:55:1855 [32minfo[39m: [32m🔍 Checking database cache before AI API call...[39m
+2025-08-04 17:18:55:1855 [32minfo[39m: [32mConnected to MongoDB![39m
+2025-08-04 17:18:55:1855 [32minfo[39m: [32mSuccessfully connected to MongoDB.[39m
+2025-08-04 17:18:55:1855 [32minfo[39m: [32mCache miss for endpoint: https://app.addomusic.com/api/services[39m
+2025-08-04 17:18:55:1855 [32minfo[39m: [32m❌ CACHE MISS - No existing AI response found in database. Will generate new one.[39m
+2025-08-04 17:18:55:1855 [32minfo[39m: [32m🤖 Making AI API call to generate new component...[39m
+2025-08-04 17:19:17:1917 [32minfo[39m: [32m💾 Storing new AI response in database cache...[39m
+2025-08-04 17:19:17:1917 [32minfo[39m: [32mUsing existing database connection[39m
+2025-08-04 17:19:17:1917 [32minfo[39m: [32mCached AI response for endpoint: https://app.addomusic.com/api/services[39m
+2025-08-04 17:19:17:1917 [32minfo[39m: [32m✅ AI response cached successfully[39m
+2025-08-04 17:19:17:1917 [32minfo[39m: [32m✅ Data fetch and AI generation successful[39m
+2025-08-04 17:20:23:2023 [32minfo[39m: [32m🚀 Starting data fetch and AI generation flow...[39m
+2025-08-04 17:20:23:2023 [32minfo[39m: [32mGenerated temporary session for request[39m
+2025-08-04 17:20:23:2023 [32minfo[39m: [32m🔍 Checking database cache before AI API call...[39m
+2025-08-04 17:20:23:2023 [32minfo[39m: [32mConnected to MongoDB![39m
+2025-08-04 17:20:23:2023 [32minfo[39m: [32mSuccessfully connected to MongoDB.[39m
+2025-08-04 17:20:23:2023 [32minfo[39m: [32m🚀 Starting data fetch and AI generation flow...[39m
+2025-08-04 17:20:23:2023 [32minfo[39m: [32mGenerated temporary session for request[39m
+2025-08-04 17:20:23:2023 [32minfo[39m: [32m🔍 Checking database cache before AI API call...[39m
+2025-08-04 17:20:23:2023 [32minfo[39m: [32mUsing existing database connection[39m
+2025-08-04 17:20:23:2023 [32minfo[39m: [32mCache hit for endpoint: https://app.addomusic.com/api/services[39m
+2025-08-04 17:20:23:2023 [32minfo[39m: [32m✅ CACHE HIT - Found existing AI response in database! No AI API call needed.[39m
+2025-08-04 17:20:23:2023 [32minfo[39m: [32mCache hit for endpoint: https://app.addomusic.com/api/services[39m
+2025-08-04 17:20:23:2023 [32minfo[39m: [32m✅ CACHE HIT - Found existing AI response in database! No AI API call needed.[39m
+2025-08-04 17:21:30:2130 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 17:21:30:2130 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 17:44:06:446 [32minfo[39m: [32m🚀 Starting data fetch and AI generation flow...[39m
+2025-08-04 17:44:06:446 [32minfo[39m: [32mGenerated temporary session for request[39m
+2025-08-04 17:44:06:446 [32minfo[39m: [32m🔍 Checking database cache before AI API call...[39m
+2025-08-04 17:44:06:446 [32minfo[39m: [32mConnected to MongoDB![39m
+2025-08-04 17:44:06:446 [32minfo[39m: [32mSuccessfully connected to MongoDB.[39m
+2025-08-04 17:44:06:446 [32minfo[39m: [32mCache miss for endpoint: https://app.addomusic.com/api/services[39m
+2025-08-04 17:44:06:446 [32minfo[39m: [32m❌ CACHE MISS - No existing AI response found in database. Will generate new one.[39m
+2025-08-04 17:44:06:446 [32minfo[39m: [32m🤖 Making AI API call to generate new component...[39m
+2025-08-04 17:44:16:4416 [32minfo[39m: [32m💾 Storing new AI response in database cache...[39m
+2025-08-04 17:44:16:4416 [32minfo[39m: [32mUsing existing database connection[39m
+2025-08-04 17:44:16:4416 [32minfo[39m: [32mCached AI response for endpoint: https://app.addomusic.com/api/services[39m
+2025-08-04 17:44:16:4416 [32minfo[39m: [32m✅ AI response cached successfully[39m
+2025-08-04 17:44:16:4416 [32minfo[39m: [32m✅ Data fetch and AI generation successful[39m
+2025-08-04 17:44:41:4441 [32minfo[39m: [32m🚀 Starting data fetch and AI generation flow...[39m
+2025-08-04 17:44:41:4441 [32minfo[39m: [32mGenerated temporary session for request[39m
+2025-08-04 17:44:41:4441 [32minfo[39m: [32m🔍 Checking database cache before AI API call...[39m
+2025-08-04 17:44:41:4441 [32minfo[39m: [32mConnected to MongoDB![39m
+2025-08-04 17:44:41:4441 [32minfo[39m: [32mSuccessfully connected to MongoDB.[39m
+2025-08-04 17:44:41:4441 [32minfo[39m: [32m🚀 Starting data fetch and AI generation flow...[39m
+2025-08-04 17:44:41:4441 [32minfo[39m: [32mGenerated temporary session for request[39m
+2025-08-04 17:44:41:4441 [32minfo[39m: [32m🔍 Checking database cache before AI API call...[39m
+2025-08-04 17:44:41:4441 [32minfo[39m: [32mUsing existing database connection[39m
+2025-08-04 17:44:41:4441 [32minfo[39m: [32mCache hit for endpoint: https://app.addomusic.com/api/services[39m
+2025-08-04 17:44:41:4441 [32minfo[39m: [32m✅ CACHE HIT - Found existing AI response in database! No AI API call needed.[39m
+2025-08-04 17:44:41:4441 [32minfo[39m: [32mCache hit for endpoint: https://app.addomusic.com/api/services[39m
+2025-08-04 17:44:41:4441 [32minfo[39m: [32m✅ CACHE HIT - Found existing AI response in database! No AI API call needed.[39m
+2025-08-04 17:44:54:4454 [32minfo[39m: [32m🚀 Starting data fetch and AI generation flow...[39m
+2025-08-04 17:44:54:4454 [32minfo[39m: [32mGenerated temporary session for request[39m
+2025-08-04 17:44:54:4454 [32minfo[39m: [32m🔍 Checking database cache before AI API call...[39m
+2025-08-04 17:44:54:4454 [32minfo[39m: [32mUsing existing database connection[39m
+2025-08-04 17:44:54:4454 [32minfo[39m: [32mCache hit for endpoint: https://app.addomusic.com/api/services[39m
+2025-08-04 17:44:54:4454 [32minfo[39m: [32m✅ CACHE HIT - Found existing AI response in database! No AI API call needed.[39m
+2025-08-04 17:47:33:4733 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 17:47:33:4733 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 17:48:13:4813 [32minfo[39m: [32m🚀 Starting data fetch and AI generation flow...[39m
+2025-08-04 17:48:13:4813 [32minfo[39m: [32mGenerated temporary session for request[39m
+2025-08-04 17:48:13:4813 [32minfo[39m: [32m🔍 Checking database cache before AI API call...[39m
+2025-08-04 17:48:13:4813 [32minfo[39m: [32mConnected to MongoDB![39m
+2025-08-04 17:48:13:4813 [32minfo[39m: [32mSuccessfully connected to MongoDB.[39m
+2025-08-04 17:48:13:4813 [32minfo[39m: [32mCache miss for endpoint: https://app.addomusic.com/api/services[39m
+2025-08-04 17:48:13:4813 [32minfo[39m: [32m❌ CACHE MISS - No existing AI response found in database. Will generate new one.[39m
+2025-08-04 17:48:13:4813 [32minfo[39m: [32m🤖 Making AI API call to generate new component...[39m
+2025-08-04 17:48:33:4833 [32minfo[39m: [32m💾 Storing new AI response in database cache...[39m
+2025-08-04 17:48:33:4833 [32minfo[39m: [32mUsing existing database connection[39m
+2025-08-04 17:48:33:4833 [32minfo[39m: [32mCached AI response for endpoint: https://app.addomusic.com/api/services[39m
+2025-08-04 17:48:33:4833 [32minfo[39m: [32m✅ AI response cached successfully[39m
+2025-08-04 17:48:33:4833 [32minfo[39m: [32m✅ Data fetch and AI generation successful[39m
+2025-08-04 17:50:22:5022 [32minfo[39m: [32m🚀 Starting data fetch and AI generation flow...[39m
+2025-08-04 17:50:22:5022 [32minfo[39m: [32mGenerated temporary session for request[39m
+2025-08-04 17:50:22:5022 [32minfo[39m: [32m🔍 Checking database cache before AI API call...[39m
+2025-08-04 17:50:22:5022 [32minfo[39m: [32mConnected to MongoDB![39m
+2025-08-04 17:50:22:5022 [32minfo[39m: [32mSuccessfully connected to MongoDB.[39m
+2025-08-04 17:50:22:5022 [32minfo[39m: [32mCache hit for endpoint: https://app.addomusic.com/api/services[39m
+2025-08-04 17:50:22:5022 [32minfo[39m: [32m✅ CACHE HIT - Found existing AI response in database! No AI API call needed.[39m
+2025-08-04 17:50:36:5036 [32minfo[39m: [32m🚀 Starting data fetch and AI generation flow...[39m
+2025-08-04 17:50:36:5036 [32minfo[39m: [32mGenerated temporary session for request[39m
+2025-08-04 17:50:36:5036 [32minfo[39m: [32m🔍 Checking database cache before AI API call...[39m
+2025-08-04 17:50:36:5036 [32minfo[39m: [32mConnected to MongoDB![39m
+2025-08-04 17:50:36:5036 [32minfo[39m: [32mSuccessfully connected to MongoDB.[39m
+2025-08-04 17:50:36:5036 [32minfo[39m: [32m🚀 Starting data fetch and AI generation flow...[39m
+2025-08-04 17:50:36:5036 [32minfo[39m: [32mGenerated temporary session for request[39m
+2025-08-04 17:50:36:5036 [32minfo[39m: [32m🔍 Checking database cache before AI API call...[39m
+2025-08-04 17:50:36:5036 [32minfo[39m: [32mUsing existing database connection[39m
+2025-08-04 17:50:36:5036 [32minfo[39m: [32mCache hit for endpoint: https://app.addomusic.com/api/services[39m
+2025-08-04 17:50:36:5036 [32minfo[39m: [32m✅ CACHE HIT - Found existing AI response in database! No AI API call needed.[39m
+2025-08-04 17:50:36:5036 [32minfo[39m: [32mCache hit for endpoint: https://app.addomusic.com/api/services[39m
+2025-08-04 17:50:36:5036 [32minfo[39m: [32m✅ CACHE HIT - Found existing AI response in database! No AI API call needed.[39m
+2025-08-04 17:52:13:5213 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 17:52:13:5213 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 17:52:13:5213 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 17:52:22:5222 [32minfo[39m: [32m🚀 Starting data fetch and AI generation flow...[39m
+2025-08-04 17:52:22:5222 [32minfo[39m: [32mGenerated temporary session for request[39m
+2025-08-04 17:52:22:5222 [32minfo[39m: [32m🔍 Checking database cache before AI API call...[39m
+2025-08-04 17:52:22:5222 [32minfo[39m: [32mConnected to MongoDB![39m
+2025-08-04 17:52:22:5222 [32minfo[39m: [32mSuccessfully connected to MongoDB.[39m
+2025-08-04 17:52:22:5222 [32minfo[39m: [32mCache hit for endpoint: https://app.addomusic.com/api/services[39m
+2025-08-04 17:52:22:5222 [32minfo[39m: [32m✅ CACHE HIT - Found existing AI response in database! No AI API call needed.[39m
+2025-08-04 17:54:05:545 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 17:54:14:5414 [32minfo[39m: [32m🚀 Starting data fetch and AI generation flow...[39m
+2025-08-04 17:54:14:5414 [32minfo[39m: [32mGenerated temporary session for request[39m
+2025-08-04 17:54:14:5414 [32minfo[39m: [32m🔍 Checking database cache before AI API call...[39m
+2025-08-04 17:54:14:5414 [32minfo[39m: [32mConnected to MongoDB![39m
+2025-08-04 17:54:14:5414 [32minfo[39m: [32mSuccessfully connected to MongoDB.[39m
+2025-08-04 17:54:14:5414 [32minfo[39m: [32mCache hit for endpoint: https://app.addomusic.com/api/services[39m
+2025-08-04 17:54:14:5414 [32minfo[39m: [32m✅ CACHE HIT - Found existing AI response in database! No AI API call needed.[39m
+2025-08-04 18:01:42:142 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 18:06:58:658 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 18:13:19:1319 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 18:14:53:1453 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 18:31:42:3142 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 19:22:12:2212 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 20:01:38:138 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 20:18:16:1816 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 20:20:13:2013 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 20:28:59:2859 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 20:35:43:3543 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 20:53:44:5344 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 21:20:57:2057 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 21:36:42:3642 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 21:58:10:5810 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 22:03:10:310 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 22:04:32:432 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-04 22:06:27:627 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-07 22:43:46:4346 [32minfo[39m: [32m🚀 Starting data fetch and AI generation flow...[39m
+2025-08-07 22:43:46:4346 [32minfo[39m: [32mGenerated temporary session for request[39m
+2025-08-07 22:43:46:4346 [32minfo[39m: [32m🔍 Checking database cache before AI API call...[39m
+2025-08-07 22:43:46:4346 [32minfo[39m: [32mConnected to MongoDB![39m
+2025-08-07 22:43:46:4346 [32minfo[39m: [32mSuccessfully connected to MongoDB.[39m
+2025-08-07 22:43:46:4346 [32minfo[39m: [32mCache miss for endpoint: https://api.starprince.dev/api/vehicle/listing[39m
+2025-08-07 22:43:46:4346 [32minfo[39m: [32m❌ CACHE MISS - No existing AI response found in database. Will generate new one.[39m
+2025-08-07 22:43:46:4346 [32minfo[39m: [32m🤖 Making AI API call to generate new component...[39m
+2025-08-07 22:43:50:4350 [33mwarn[39m: [33m⚠️ AI generation failed, using fallback[39m
+2025-08-07 22:45:06:456 [32minfo[39m: [32m🚀 Starting data fetch and AI generation flow...[39m
+2025-08-07 22:45:06:456 [32minfo[39m: [32mGenerated temporary session for request[39m
+2025-08-07 22:45:06:456 [32minfo[39m: [32m🔍 Checking database cache before AI API call...[39m
+2025-08-07 22:45:06:456 [32minfo[39m: [32mConnected to MongoDB![39m
+2025-08-07 22:45:06:456 [32minfo[39m: [32mSuccessfully connected to MongoDB.[39m
+2025-08-07 22:45:06:456 [32minfo[39m: [32mCache miss for endpoint: https://api.starprince.dev/api/vehicle/listing[39m
+2025-08-07 22:45:06:456 [32minfo[39m: [32m❌ CACHE MISS - No existing AI response found in database. Will generate new one.[39m
+2025-08-07 22:45:06:456 [32minfo[39m: [32m🤖 Making AI API call to generate new component...[39m
+2025-08-07 22:45:10:4510 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-07 22:45:10:4510 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-07 22:45:29:4529 [32minfo[39m: [32m🚀 Starting data fetch and AI generation flow...[39m
+2025-08-07 22:45:29:4529 [32minfo[39m: [32mGenerated temporary session for request[39m
+2025-08-07 22:45:29:4529 [32minfo[39m: [32m🔍 Checking database cache before AI API call...[39m
+2025-08-07 22:45:29:4529 [32minfo[39m: [32mConnected to MongoDB![39m
+2025-08-07 22:45:29:4529 [32minfo[39m: [32mSuccessfully connected to MongoDB.[39m
+2025-08-07 22:45:29:4529 [32minfo[39m: [32mCache miss for endpoint: https://api.starprince.dev/api/vehicle/listing[39m
+2025-08-07 22:45:29:4529 [32minfo[39m: [32m❌ CACHE MISS - No existing AI response found in database. Will generate new one.[39m
+2025-08-07 22:45:29:4529 [32minfo[39m: [32m🤖 Making AI API call to generate new component...[39m
+2025-08-07 22:45:33:4533 [33mwarn[39m: [33m⚠️ AI generation failed, using fallback[39m
+2025-08-07 22:46:02:462 [32minfo[39m: [32m🚀 Starting data fetch and AI generation flow...[39m
+2025-08-07 22:46:02:462 [32minfo[39m: [32mGenerated temporary session for request[39m
+2025-08-07 22:46:02:462 [32minfo[39m: [32m🔍 Checking database cache before AI API call...[39m
+2025-08-07 22:46:02:462 [32minfo[39m: [32mConnected to MongoDB![39m
+2025-08-07 22:46:02:462 [32minfo[39m: [32mSuccessfully connected to MongoDB.[39m
+2025-08-07 22:46:02:462 [32minfo[39m: [32mCache miss for endpoint: https://api.starprince.dev/api/vehicle/listing[39m
+2025-08-07 22:46:02:462 [32minfo[39m: [32m❌ CACHE MISS - No existing AI response found in database. Will generate new one.[39m
+2025-08-07 22:46:02:462 [32minfo[39m: [32m🤖 Making AI API call to generate new component...[39m
+2025-08-07 22:46:05:465 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-07 22:46:05:465 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-07 22:46:37:4637 [32minfo[39m: [32m🚀 Starting data fetch and AI generation flow...[39m
+2025-08-07 22:46:37:4637 [32minfo[39m: [32mGenerated temporary session for request[39m
+2025-08-07 22:46:37:4637 [32minfo[39m: [32m🔍 Checking database cache before AI API call...[39m
+2025-08-07 22:46:38:4638 [32minfo[39m: [32mConnected to MongoDB![39m
+2025-08-07 22:46:38:4638 [32minfo[39m: [32mSuccessfully connected to MongoDB.[39m
+2025-08-07 22:46:38:4638 [32minfo[39m: [32mCache miss for endpoint: https://api.starprince.dev/api/vehicle/listing[39m
+2025-08-07 22:46:38:4638 [32minfo[39m: [32m❌ CACHE MISS - No existing AI response found in database. Will generate new one.[39m
+2025-08-07 22:46:38:4638 [32minfo[39m: [32m🤖 Making AI API call to generate new component...[39m
+2025-08-07 22:48:13:4813 [33mwarn[39m: [33m⚠️ AI generation failed, using fallback[39m
+2025-08-07 22:50:32:5032 [32minfo[39m: [32m🚀 Starting data fetch and AI generation flow...[39m
+2025-08-07 22:50:32:5032 [32minfo[39m: [32mGenerated temporary session for request[39m
+2025-08-07 22:50:32:5032 [32minfo[39m: [32m🔍 Checking database cache before AI API call...[39m
+2025-08-07 22:50:32:5032 [32minfo[39m: [32mConnected to MongoDB![39m
+2025-08-07 22:50:32:5032 [32minfo[39m: [32mSuccessfully connected to MongoDB.[39m
+2025-08-07 22:50:32:5032 [32minfo[39m: [32mCache miss for endpoint: https://api.starprince.dev/api/vehicle/listing[39m
+2025-08-07 22:50:32:5032 [32minfo[39m: [32m❌ CACHE MISS - No existing AI response found in database. Will generate new one.[39m
+2025-08-07 22:50:32:5032 [32minfo[39m: [32m🤖 Making AI API call to generate new component...[39m
+2025-08-07 22:50:34:5034 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-07 22:50:34:5034 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-07 22:50:49:5049 [32minfo[39m: [32m🚀 Starting data fetch and AI generation flow...[39m
+2025-08-07 22:50:49:5049 [32minfo[39m: [32mGenerated temporary session for request[39m
+2025-08-07 22:50:49:5049 [32minfo[39m: [32m🔍 Checking database cache before AI API call...[39m
+2025-08-07 22:50:49:5049 [32minfo[39m: [32mConnected to MongoDB![39m
+2025-08-07 22:50:49:5049 [32minfo[39m: [32mSuccessfully connected to MongoDB.[39m
+2025-08-07 22:50:49:5049 [32minfo[39m: [32mCache miss for endpoint: https://api.starprince.dev/api/vehicle/listing[39m
+2025-08-07 22:50:49:5049 [32minfo[39m: [32m❌ CACHE MISS - No existing AI response found in database. Will generate new one.[39m
+2025-08-07 22:50:49:5049 [32minfo[39m: [32m🤖 Making AI API call to generate new component...[39m
+2025-08-07 22:54:06:546 [32minfo[39m: [32m💾 Storing new AI response in database cache...[39m
+2025-08-07 22:54:06:546 [32minfo[39m: [32mUsing existing database connection[39m
+2025-08-07 22:54:06:546 [32minfo[39m: [32mCached AI response for endpoint: https://api.starprince.dev/api/vehicle/listing[39m
+2025-08-07 22:54:06:546 [32minfo[39m: [32m✅ AI response cached successfully[39m
+2025-08-07 22:54:06:546 [32minfo[39m: [32m✅ Data fetch and AI generation successful[39m
+2025-08-07 23:02:47:247 [32minfo[39m: [32m🚀 Starting data fetch and AI generation flow...[39m
+2025-08-07 23:02:47:247 [32minfo[39m: [32mGenerated temporary session for request[39m
+2025-08-07 23:02:47:247 [32minfo[39m: [32m🔍 Checking database cache before AI API call...[39m
+2025-08-07 23:02:47:247 [32minfo[39m: [32mConnected to MongoDB![39m
+2025-08-07 23:02:47:247 [32minfo[39m: [32mSuccessfully connected to MongoDB.[39m
+2025-08-07 23:02:47:247 [32minfo[39m: [32mCache hit for endpoint: https://api.starprince.dev/api/vehicle/listing[39m
+2025-08-07 23:02:47:247 [32minfo[39m: [32m✅ CACHE HIT - Found existing AI response in database! No AI API call needed.[39m
+2025-08-07 23:05:28:528 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-07 23:05:28:528 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-07 23:10:19:1019 [32minfo[39m: [32m🚀 Starting data fetch and AI generation flow...[39m
+2025-08-07 23:10:19:1019 [32minfo[39m: [32mGenerated temporary session for request[39m
+2025-08-07 23:10:19:1019 [32minfo[39m: [32m🔍 Checking database cache before AI API call...[39m
+2025-08-07 23:10:20:1020 [32minfo[39m: [32mConnected to MongoDB![39m
+2025-08-07 23:10:20:1020 [32minfo[39m: [32mSuccessfully connected to MongoDB.[39m
+2025-08-07 23:10:20:1020 [32minfo[39m: [32mCache miss for endpoint: https://app.addomusic.com/api/services[39m
+2025-08-07 23:10:20:1020 [32minfo[39m: [32m❌ CACHE MISS - No existing AI response found in database. Will generate new one.[39m
+2025-08-07 23:10:20:1020 [32minfo[39m: [32m🤖 Making AI API call to generate new component...[39m
+2025-08-07 23:13:18:1318 [32minfo[39m: [32m💾 Storing new AI response in database cache...[39m
+2025-08-07 23:13:18:1318 [32minfo[39m: [32mUsing existing database connection[39m
+2025-08-07 23:13:18:1318 [32minfo[39m: [32mCached AI response for endpoint: https://app.addomusic.com/api/services[39m
+2025-08-07 23:13:18:1318 [32minfo[39m: [32m✅ AI response cached successfully[39m
+2025-08-07 23:13:18:1318 [32minfo[39m: [32m✅ Data fetch and AI generation successful[39m
+2025-08-07 23:58:49:5849 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-08 00:00:15:015 [32minfo[39m: [32m🚀 Starting data fetch and AI generation flow...[39m
+2025-08-08 00:00:15:015 [32minfo[39m: [32mGenerated temporary session for request[39m
+2025-08-08 00:00:15:015 [32minfo[39m: [32m🔍 Checking database cache before AI API call...[39m
+2025-08-08 00:00:16:016 [32minfo[39m: [32mConnected to MongoDB![39m
+2025-08-08 00:00:16:016 [32minfo[39m: [32mSuccessfully connected to MongoDB.[39m
+2025-08-08 00:00:16:016 [32minfo[39m: [32mCache miss for endpoint: https://app.addomusic.com/api/services[39m
+2025-08-08 00:00:16:016 [32minfo[39m: [32m❌ CACHE MISS - No existing AI response found in database. Will generate new one.[39m
+2025-08-08 00:00:16:016 [32minfo[39m: [32m🤖 Making AI API call to generate new component...[39m
+2025-08-08 00:02:46:246 [32minfo[39m: [32m💾 Storing new AI response in database cache...[39m
+2025-08-08 00:02:46:246 [32minfo[39m: [32mUsing existing database connection[39m
+2025-08-08 00:02:46:246 [32minfo[39m: [32mCached AI response for endpoint: https://app.addomusic.com/api/services[39m
+2025-08-08 00:02:46:246 [32minfo[39m: [32m✅ AI response cached successfully[39m
+2025-08-08 00:02:46:246 [32minfo[39m: [32m✅ Data fetch and AI generation successful[39m
+2025-08-08 00:04:28:428 [32minfo[39m: [32m🚀 Starting data fetch and AI generation flow...[39m
+2025-08-08 00:04:28:428 [32minfo[39m: [32mGenerated temporary session for request[39m
+2025-08-08 00:04:28:428 [32minfo[39m: [32m🔍 Checking database cache before AI API call...[39m
+2025-08-08 00:04:28:428 [32minfo[39m: [32mUsing existing database connection[39m
+2025-08-08 00:04:28:428 [32minfo[39m: [32mCache miss for endpoint: https://api.starprince.dev/api/vehicle/listing[39m
+2025-08-08 00:04:28:428 [32minfo[39m: [32m❌ CACHE MISS - No existing AI response found in database. Will generate new one.[39m
+2025-08-08 00:04:28:428 [32minfo[39m: [32m🤖 Making AI API call to generate new component...[39m
+2025-08-08 00:07:02:72 [32minfo[39m: [32m💾 Storing new AI response in database cache...[39m
+2025-08-08 00:07:02:72 [32minfo[39m: [32mUsing existing database connection[39m
+2025-08-08 00:07:02:72 [32minfo[39m: [32mCached AI response for endpoint: https://api.starprince.dev/api/vehicle/listing[39m
+2025-08-08 00:07:02:72 [32minfo[39m: [32m✅ AI response cached successfully[39m
+2025-08-08 00:07:02:72 [32minfo[39m: [32m✅ Data fetch and AI generation successful[39m
+2025-08-08 00:11:46:1146 [32minfo[39m: [32m🚀 Starting data fetch and AI generation flow...[39m
+2025-08-08 00:11:46:1146 [32minfo[39m: [32mGenerated temporary session for request[39m
+2025-08-08 00:11:46:1146 [32minfo[39m: [32m🔍 Checking database cache before AI API call...[39m
+2025-08-08 00:11:46:1146 [32minfo[39m: [32mConnected to MongoDB![39m
+2025-08-08 00:11:46:1146 [32minfo[39m: [32mSuccessfully connected to MongoDB.[39m
+2025-08-08 00:11:46:1146 [32minfo[39m: [32mCache hit for endpoint: https://api.starprince.dev/api/vehicle/listing[39m
+2025-08-08 00:11:46:1146 [32minfo[39m: [32m✅ CACHE HIT - Found existing AI response in database! No AI API call needed.[39m
+2025-08-08 00:12:07:127 [32minfo[39m: [32m🚀 Starting data fetch and AI generation flow...[39m
+2025-08-08 00:12:07:127 [32minfo[39m: [32mGenerated temporary session for request[39m
+2025-08-08 00:12:07:127 [32minfo[39m: [32m🔍 Checking database cache before AI API call...[39m
+2025-08-08 00:12:07:127 [32minfo[39m: [32mUsing existing database connection[39m
+2025-08-08 00:12:07:127 [32minfo[39m: [32mCache hit for endpoint: https://api.starprince.dev/api/vehicle/listing[39m
+2025-08-08 00:12:07:127 [32minfo[39m: [32m✅ CACHE HIT - Found existing AI response in database! No AI API call needed.[39m
+2025-08-08 00:12:12:1212 [32minfo[39m: [32m🚀 Starting data fetch and AI generation flow...[39m
+2025-08-08 00:12:12:1212 [32minfo[39m: [32mGenerated temporary session for request[39m
+2025-08-08 00:12:12:1212 [32minfo[39m: [32m🔍 Checking database cache before AI API call...[39m
+2025-08-08 00:12:12:1212 [32minfo[39m: [32mUsing existing database connection[39m
+2025-08-08 00:12:12:1212 [32minfo[39m: [32mCache miss for endpoint: http://localhost:3000/api/get-data[39m
+2025-08-08 00:12:12:1212 [32minfo[39m: [32m❌ CACHE MISS - No existing AI response found in database. Will generate new one.[39m
+2025-08-08 00:12:12:1212 [32minfo[39m: [32m🤖 Making AI API call to generate new component...[39m
+2025-08-08 00:12:12:1212 [32minfo[39m: [32m🚀 Starting data fetch and AI generation flow...[39m
+2025-08-08 00:12:12:1212 [32minfo[39m: [32mGenerated temporary session for request[39m
+2025-08-08 00:12:12:1212 [32minfo[39m: [32m🔍 Checking database cache before AI API call...[39m
+2025-08-08 00:12:12:1212 [32minfo[39m: [32mUsing existing database connection[39m
+2025-08-08 00:12:12:1212 [32minfo[39m: [32mCache miss for endpoint: http://localhost:3000/api/get-data[39m
+2025-08-08 00:12:12:1212 [32minfo[39m: [32m❌ CACHE MISS - No existing AI response found in database. Will generate new one.[39m
+2025-08-08 00:12:12:1212 [32minfo[39m: [32m🤖 Making AI API call to generate new component...[39m
+2025-08-08 00:12:15:1215 [32minfo[39m: [32m🚀 Starting data fetch and AI generation flow...[39m
+2025-08-08 00:12:15:1215 [32minfo[39m: [32mGenerated temporary session for request[39m
+2025-08-08 00:12:15:1215 [32minfo[39m: [32m🔍 Checking database cache before AI API call...[39m
+2025-08-08 00:12:15:1215 [32minfo[39m: [32mUsing existing database connection[39m
+2025-08-08 00:12:15:1215 [32minfo[39m: [32mCache miss for endpoint: http://localhost:3000/api/get-data[39m
+2025-08-08 00:12:15:1215 [32minfo[39m: [32m❌ CACHE MISS - No existing AI response found in database. Will generate new one.[39m
+2025-08-08 00:12:15:1215 [32minfo[39m: [32m🤖 Making AI API call to generate new component...[39m
+2025-08-08 00:12:25:1225 [32minfo[39m: [32m🚀 Starting data fetch and AI generation flow...[39m
+2025-08-08 00:12:25:1225 [32minfo[39m: [32mGenerated temporary session for request[39m
+2025-08-08 00:12:25:1225 [32minfo[39m: [32m🔍 Checking database cache before AI API call...[39m
+2025-08-08 00:12:25:1225 [32minfo[39m: [32mUsing existing database connection[39m
+2025-08-08 00:12:25:1225 [32minfo[39m: [32mCache hit for endpoint: https://api.starprince.dev/api/vehicle/listing[39m
+2025-08-08 00:12:25:1225 [32minfo[39m: [32m✅ CACHE HIT - Found existing AI response in database! No AI API call needed.[39m
+2025-08-08 00:12:28:1228 [32minfo[39m: [32m🚀 Starting data fetch and AI generation flow...[39m
+2025-08-08 00:12:28:1228 [32minfo[39m: [32mGenerated temporary session for request[39m
+2025-08-08 00:12:28:1228 [32minfo[39m: [32m🔍 Checking database cache before AI API call...[39m
+2025-08-08 00:12:28:1228 [32minfo[39m: [32mUsing existing database connection[39m
+2025-08-08 00:12:28:1228 [32minfo[39m: [32mCache miss for endpoint: http://localhost:3000/api/get-data[39m
+2025-08-08 00:12:28:1228 [32minfo[39m: [32m❌ CACHE MISS - No existing AI response found in database. Will generate new one.[39m
+2025-08-08 00:12:28:1228 [32minfo[39m: [32m🤖 Making AI API call to generate new component...[39m
+2025-08-08 00:12:31:1231 [32minfo[39m: [32m🚀 Starting data fetch and AI generation flow...[39m
+2025-08-08 00:12:31:1231 [32minfo[39m: [32mGenerated temporary session for request[39m
+2025-08-08 00:12:31:1231 [32minfo[39m: [32m🔍 Checking database cache before AI API call...[39m
+2025-08-08 00:12:31:1231 [32minfo[39m: [32mUsing existing database connection[39m
+2025-08-08 00:12:31:1231 [32minfo[39m: [32mCache miss for endpoint: http://localhost:3000/api/get-data[39m
+2025-08-08 00:12:31:1231 [32minfo[39m: [32m❌ CACHE MISS - No existing AI response found in database. Will generate new one.[39m
+2025-08-08 00:12:31:1231 [32minfo[39m: [32m🤖 Making AI API call to generate new component...[39m
+2025-08-08 00:14:52:1452 [32minfo[39m: [32m💾 Storing new AI response in database cache...[39m
+2025-08-08 00:14:52:1452 [32minfo[39m: [32mUsing existing database connection[39m
+2025-08-08 00:14:52:1452 [32minfo[39m: [32mCached AI response for endpoint: http://localhost:3000/api/get-data[39m
+2025-08-08 00:14:52:1452 [32minfo[39m: [32m✅ AI response cached successfully[39m
+2025-08-08 00:14:52:1452 [32minfo[39m: [32m✅ Data fetch and AI generation successful[39m
+2025-08-08 00:15:05:155 [32minfo[39m: [32m💾 Storing new AI response in database cache...[39m
+2025-08-08 00:15:05:155 [32minfo[39m: [32mUsing existing database connection[39m
+2025-08-08 00:15:05:155 [32minfo[39m: [32mCached AI response for endpoint: http://localhost:3000/api/get-data[39m
+2025-08-08 00:15:05:155 [32minfo[39m: [32m✅ AI response cached successfully[39m
+2025-08-08 00:15:05:155 [32minfo[39m: [32m✅ Data fetch and AI generation successful[39m
+2025-08-08 00:15:20:1520 [32minfo[39m: [32m🚀 Starting data fetch and AI generation flow...[39m
+2025-08-08 00:15:20:1520 [32minfo[39m: [32mGenerated temporary session for request[39m
+2025-08-08 00:15:20:1520 [32minfo[39m: [32m🔍 Checking database cache before AI API call...[39m
+2025-08-08 00:15:20:1520 [32minfo[39m: [32mConnected to MongoDB![39m
+2025-08-08 00:15:20:1520 [32minfo[39m: [32mSuccessfully connected to MongoDB.[39m
+2025-08-08 00:15:20:1520 [32minfo[39m: [32mCache hit for endpoint: https://api.starprince.dev/api/vehicle/listing[39m
+2025-08-08 00:15:20:1520 [32minfo[39m: [32m✅ CACHE HIT - Found existing AI response in database! No AI API call needed.[39m
+2025-08-08 00:15:36:1536 [32minfo[39m: [32m💾 Storing new AI response in database cache...[39m
+2025-08-08 00:15:36:1536 [32minfo[39m: [32mUsing existing database connection[39m
+2025-08-08 00:15:36:1536 [32minfo[39m: [32mCached AI response for endpoint: http://localhost:3000/api/get-data[39m
+2025-08-08 00:15:36:1536 [32minfo[39m: [32m✅ AI response cached successfully[39m
+2025-08-08 00:15:36:1536 [32minfo[39m: [32m✅ Data fetch and AI generation successful[39m
+2025-08-08 00:15:40:1540 [32minfo[39m: [32m💾 Storing new AI response in database cache...[39m
+2025-08-08 00:15:40:1540 [32minfo[39m: [32mUsing existing database connection[39m
+2025-08-08 00:15:40:1540 [32minfo[39m: [32mCached AI response for endpoint: http://localhost:3000/api/get-data[39m
+2025-08-08 00:15:40:1540 [32minfo[39m: [32m✅ AI response cached successfully[39m
+2025-08-08 00:15:40:1540 [32minfo[39m: [32m✅ Data fetch and AI generation successful[39m
+2025-08-08 00:16:38:1638 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-08 00:16:38:1638 [32minfo[39m: [32mMongoDB disconnected[39m
+2025-08-08 00:16:38:1638 [32minfo[39m: [32mMongoDB disconnected[39m
