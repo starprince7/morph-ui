@@ -1,5 +1,6 @@
 import Navigation from '@/components/Navigation';
 import URLInputForm from '@/components/URLInputForm';
+import HomeThemeSwitcher from '@/components/HomeThemeSwitcher';
 
 /**
  * Main page with Google search-like UI for URL input
@@ -19,6 +20,11 @@ export default function HomePage() {
           <p className="text-lg sm:text-xl text-black/60 dark:text-white/60 max-w-2xl mx-auto">
             The UI builds itself — just give it an API
           </p>
+        </div>
+        
+        {/* Theme Switcher */}
+        <div className="mb-6">
+          <HomeThemeSwitcher />
         </div>
         
         {/* URL Input Form */}

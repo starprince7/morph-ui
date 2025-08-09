@@ -1,55 +1,42 @@
 import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import Navigation from "@/components/Navigation";
-import ReactRunnerRenderer from "@/components/ReactRunnerRenderer";
+import VisualizerClientWrapper from "@/components/VisualizerClientWrapper";
+import LoadingSkeleton from "@/components/LoadingSkeleton";
 import { fetchAiGeneratedUiComponent } from "@/utils/dataFetcher";
+import { ThemeOption } from "@/lib/types";
 
 interface VisualizePageProps {
-  searchParams: Promise<{ source?: string }>;
-}
-
-// Loading skeleton component
-function LoadingSkeleton() {
-  return (
-    <div className="w-full min-h-[600px] p-8 animate-pulse">
-      <div className="space-y-4">
-        <div className="h-8 bg-black/[.05] dark:bg-white/[.06] rounded-lg w-3/4"></div>
-        <div className="h-4 bg-black/[.05] dark:bg-white/[.06] rounded w-1/2"></div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
-          {[...Array(6)].map((_, i) => (
-            <div
-              key={i}
-              className="h-32 bg-black/[.05] dark:bg-white/[.06] rounded-lg"
-            ></div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
+  params: Promise<{}>;
+  searchParams: Promise<{ 
+    source?: string;
+    theme?: string;
+  }>;
 }
 
 /**
  * Server-side AI component generation for the visualize page
  */
-async function generateVisualizationComponent(apiEndpoint: string) {
+async function generateVisualizationComponent(apiEndpoint: string, theme?: string) {
   try {
     console.log("🚀 Generating AI component for endpoint:", apiEndpoint);
 
     // Generate cache key from the API endpoint
     const cacheKey = `visualize-${apiEndpoint.replace(/[^a-zA-Z0-9]/g, "_")}`;
 
-    const result = await fetchAiGeneratedUiComponent({
-      apiEndpoint,
-      cacheKey,
-      enableCaching: true,
-      cacheTtlHours: 24,
-      revalidate: 300, // 5 minutes
-      fallbackOnError: true,
-    });
+    // Call fetchAiGeneratedUiComponent with options object
+    const result = await fetchAiGeneratedUiComponent(
+      apiEndpoint, 
+      {
+        theme: theme as ThemeOption | undefined,
+        enableCaching: true,
+        revalidate: 300, // 5 minutes
+      }
+    );
 
     console.log("✅ AI component generation completed:", {
       success: result.success,
-      hasAiResponse: !!result.aiResponse,
+      hasData: !!result.data,
       error: result.error,
     });
 
@@ -61,9 +48,17 @@ async function generateVisualizationComponent(apiEndpoint: string) {
 }
 
 export default async function VisualizePage({
+  params,
   searchParams,
 }: VisualizePageProps) {
-  const sourceUrl = await searchParams;
+  const searchParamsData = await searchParams;
+  
+  const sourceUrl = {
+    source: searchParamsData.source || null,
+  };
+  
+  // Get theme from query params (default to purple-night)
+  const theme = searchParamsData.theme === 'ocean-blue' ? 'ocean-blue' : 'purple-night';
 
   // Redirect to home if no source URL provided
   if (!sourceUrl.source) {
@@ -77,42 +72,24 @@ export default async function VisualizePage({
     notFound();
   }
 
-  // Generate AI component server-side
-  const result = await generateVisualizationComponent(sourceUrl.source!);
+  // Generate component for visualization if source URL is provided
+  // const result = await generateVisualizationComponent(sourceUrl.source, theme);
+  const result = null
 
   return (
     <div className="font-sans min-h-screen bg-white dark:bg-black">
       <Navigation />
-
       {/* Main Content */}
+      {/* AI-Generated Component with Theme Switcher */}
+      <div className="relative">
+        <Suspense fallback={<LoadingSkeleton />}>
+          <VisualizerClientWrapper 
+            initialData={result}
+            apiEndpoint={sourceUrl.source!}
+          />
+        </Suspense>
+      </div>
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* AI-Generated Component */}
-        <div className="relative">
-          <Suspense fallback={<LoadingSkeleton />}>
-            {result.aiResponse ? (
-              <ReactRunnerRenderer
-                aiResponse={result.aiResponse}
-                data={result.data}
-                className="w-full min-h-[600px] p-4"
-              />
-            ) : (
-              <div className="p-8 text-center">
-                <h3 className="text-lg font-semibold text-red-600 dark:text-red-400 mb-2">
-                  Component Generation Failed
-                </h3>
-                <p className="text-sm text-black/60 dark:text-white/60 mb-4">
-                  Unable to generate AI component from the provided endpoint.
-                </p>
-                {result.error && (
-                  <code className="text-xs bg-red-50 dark:bg-red-900/20 px-3 py-2 rounded text-red-700 dark:text-red-300">
-                    {result.error}
-                  </code>
-                )}
-              </div>
-            )}
-          </Suspense>
-        </div>
-
         {/* Back to Home */}
         <div className="mt-8 text-center">
           <a
@@ -128,10 +105,10 @@ export default async function VisualizePage({
 }
 
 // Metadata for SEO
-export async function generateMetadata({ searchParams }: VisualizePageProps) {
-  const sourceUrl = await searchParams;
+export async function generateMetadata({ params, searchParams }: VisualizePageProps) {
+  const searchParamsData = await searchParams;
 
-  if (!sourceUrl.source) {
+  if (!searchParamsData.source) {
     return {
       title: "Visualize API Data | MorphUI",
       description: "Generate beautiful UI components from any API endpoint",
@@ -139,10 +116,10 @@ export async function generateMetadata({ searchParams }: VisualizePageProps) {
   }
 
   try {
-    const url = new URL(sourceUrl.source!);
+    const url = new URL(searchParamsData.source!);
     return {
       title: `AI UI for ${url.hostname} | MorphUI`,
-      description: `AI-generated UI component for ${sourceUrl.source} - automatically created from your API data structure`,
+      description: `AI-generated UI component for ${searchParamsData.source} - automatically created from your API data structure`,
     };
   } catch {
     return {

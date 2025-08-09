@@ -3,7 +3,7 @@ import 'server-only';
 import OpenAI from 'openai';
 import { readFileSync } from 'fs';
 import { join } from 'path';
-import { AIComponentResponse, APIDataResponse, ComponentGenerationOptions } from './types';
+import { AIComponentResponse, APIDataResponse, ComponentGenerationOptions, ThemeOption } from './types';
 import { validateComponentCode } from './security';
 
 // Initialize OpenAI client
@@ -215,22 +215,36 @@ export default GeneratedDataComponent;`;
 }
 
 /**
+ * Determines the system prompt file path based on the selected theme
+ */
+function getSystemPromptPath(theme: ThemeOption = 'purple-night'): string {
+  switch (theme) {
+    case 'ocean-blue':
+      return join(process.cwd(), 'src', 'lib', 'system-prompts', 'gpt-system-prompt-2-oceanblue.txt');
+    case 'purple-night':
+    default:
+      return join(process.cwd(), 'src', 'lib', 'system-prompts', 'gpt-system-prompt-3-purple.txt');
+  }
+}
+
+/**
  * Generates AI component code using OpenAI
  */
-async function generateAiCode(data: any, apiEndpoint: string): Promise<string> {
+async function generateAiCode(data: any, apiEndpoint: string, theme: ThemeOption = 'purple-night'): Promise<string> {
   if (!process.env.OPENAI_API_KEY || process.env.OPENAI_API_KEY.includes('your_openai_api_key_here')) {
     console.warn('OpenAI API key not configured, using fallback component');
     return generateFallbackComponent(data, apiEndpoint);
   }
 
   try {
-    // Read the system prompt from the text file
-    const systemPromptPath = join(process.cwd(), 'src', 'lib', 'system-prompts', 'gpt-system-prompt.txt');
+    // Get the appropriate system prompt based on the theme
+    const systemPromptPath = getSystemPromptPath(theme);
+    console.log(`Using theme: ${theme}, system prompt: ${systemPromptPath}`);
     const systemPrompt = readFileSync(systemPromptPath, 'utf-8');
 
     const completion = await openai.chat.completions.create({
-      // model: 'gpt-4o',
-      model: 'gpt-5',
+      model: 'gpt-4o',
+      // model: 'gpt-5',
       messages: [
         {
           role: 'system',
@@ -299,7 +313,8 @@ export async function generateAIComponent(options: ComponentGenerationOptions): 
     // Step 2: Generate component code using AI
     console.log('Generating component code...');
     // Pass the original API endpoint so AI can construct /api/get-data?endpoint=ORIGINAL_ENDPOINT
-    const componentCode = await generateAiCode(apiData.data, options.apiEndpoint);
+    // Use theme from options or default to 'purple-night'
+    const componentCode = await generateAiCode(apiData.data, options.apiEndpoint, options.theme);
     console.log('Component Code:', componentCode)
 
     // Step 3: Validate and sanitize the generated code

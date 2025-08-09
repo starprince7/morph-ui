@@ -23,6 +23,33 @@ export interface SecurityValidationResult {
   sanitizedCode?: string;
 }
 
+export type ThemeOption = 'purple-night' | 'ocean-blue';
+
+// API response structure from endpoints
+export interface ApiSpec {
+  openapi?: string;
+  swagger?: string;
+  info?: any;
+  paths?: any;
+  components?: any;
+  tags?: any[];
+  [key: string]: any; // For any other fields in various API specs
+}
+
+// AI generated code response
+export interface AiCode {
+  success: boolean;
+  component: string;
+  componentName: string;
+  error?: string;
+  metadata?: {
+    generatedAt: string;
+    dataSource: string;
+    theme?: ThemeOption;
+    cacheKey: string;
+  };
+}
+
 export interface ComponentGenerationOptions {
   cacheKey?: string;
   revalidate?: number;
@@ -31,6 +58,7 @@ export interface ComponentGenerationOptions {
   sessionId?: string;
   enableCaching?: boolean;
   cacheTtlHours?: number;
+  theme?: ThemeOption; // Theme option for the generated component
 }
 
 // Landing page specific types

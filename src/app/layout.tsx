@@ -1,36 +1,32 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import { Inter } from 'next/font/google';
+import '@/app/globals.css';
+import { ThemeProvider } from '@/contexts/ThemeContext';
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+const inter = Inter({ subsets: ['latin'] });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-export const metadata: Metadata = {
-  title: "AI Portfolio Dashboard | Next.js v15 SSR",
-  description: "Server-side rendered AI component generation with Next.js v15 and OpenAI",
-  keywords: ["Next.js", "AI", "SSR", "OpenAI", "React", "TypeScript"],
-  authors: [{ name: "Portfolio AI" }],
-  viewport: "width=device-width, initial-scale=1",
+export const metadata = {
+  title: 'MorphUI | The UI builds itself',
+  description: 'AI-powered UI component generator that builds interfaces from API endpoints',
+  keywords: 'AI, UI generator, API visualization, React components, Next.js',
+  authors: [{ name: 'Starprince Team' }],
+  openGraph: {
+    title: 'MorphUI',
+    description: 'The UI builds itself — just give it an API',
+    type: 'website',
+  },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
+interface RootLayoutProps {
   children: React.ReactNode;
-}>) {
+}
+
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body className={inter.className}>
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

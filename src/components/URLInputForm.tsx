@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { createOrGetSession } from "@/app/actions/session";
+import { useTheme } from "@/contexts/ThemeContext";
 
 interface URLInputFormProps {
   onSubmit?: (url: string) => void;
@@ -20,6 +21,7 @@ export default function URLInputForm({ onSubmit }: URLInputFormProps) {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
   const [isValidating, setIsValidating] = useState(false);
+  const { theme } = useTheme();
 
   const validateUrl = (urlString: string): boolean => {
     try {
@@ -67,8 +69,8 @@ export default function URLInputForm({ onSubmit }: URLInputFormProps) {
       // Create or get session before redirecting
       await createOrGetSession();
 
-      // Redirect to visualize page
-      window.location.href = `/visualize?source=${encodeURIComponent(url)}`;
+      // Redirect to visualize page with theme parameter
+      window.location.href = `/visualize?source=${encodeURIComponent(url)}&theme=${theme}`;
 
       if (onSubmit) {
         onSubmit(url);

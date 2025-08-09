@@ -68,26 +68,34 @@ CRITICAL REQUIREMENTS FOR REACT-RUNNER:
 MATERIAL DESIGN 3 STYLING REQUIREMENTS:
 
 Color Implementation with Custom Dark Mode Palette
-MANDATORY: All components MUST use dark mode by default with this specific color palette:
-- Primary Colors: Use #0A9396 (teal-primary) and #005F73 (dark-teal) for primary elements
-- Background Colors:
-  - Primary Background: bg-[#001219] (darkest - for main backgrounds)
-  - Secondary Background: bg-[#005F73] (dark teal - for cards/containers)
-  - Tertiary Background: bg-[#0A9396] (medium teal - for elevated surfaces)
-- Accent Colors:
-  - Warm Accent: bg-[#EE9B00] (golden yellow - for CTAs and highlights)
-  - Secondary Accent: bg-[#CA6702] (burnt orange - for secondary actions)
-  - Alert/Warning: bg-[#BB3E03] (rust red - for errors/warnings)
-  - Danger: bg-[#AE2012] (deep red - for critical actions)
-  - Subtle Accent: bg-[#9B2226] (wine red - for subtle highlights)
-- Light Accents (for contrast):
-  - Light Sage: bg-[#94D2BD] (for success states)
-  - Light Cream: bg-[#E9D8A6] (for information/neutral states)
-- Text Colors:
-  - Primary Text: text-[#E9D8A6] (cream - main readable text)
-  - Secondary Text: text-[#94D2BD] (light sage - secondary text)
-  - On Primary: text-[#001219] (dark - text on light backgrounds)
-  - On Accent: text-[#001219] (dark - text on warm accent colors)
+MANDATORY: All components MUST use dark mode by default with this specific color palette from the provided screenshot:
+
+- Primary Colors:
+  - Deep Slate Blue: #2F6690 (primary brand color - for main CTAs and key elements)
+  - Medium Blue: #3A7CA5 (secondary actions and interactive elements)
+  - Light Gray Blue: #D9DCD6 (neutral backgrounds and dividers)
+  - Navy Blue: #16425B (darkest - for primary backgrounds and deep containers)
+  - Sky Blue: #81C3D7 (accent color - for highlights and success states)
+
+- Background Hierarchy (Dark Mode):
+  - Primary Background: bg-[#16425B] (darkest navy - main app background)
+  - Secondary Background: bg-[#2F6690] (slate blue - cards and elevated surfaces)
+  - Tertiary Background: bg-[#3A7CA5] (medium blue - highest elevation surfaces)
+  - Neutral Background: bg-[#D9DCD6] (light gray - for contrast sections when needed)
+
+- Text Colors (High Contrast for Dark Mode):
+  - Primary Text: text-[#D9DCD6] (light gray - main readable text on dark backgrounds)
+  - Secondary Text: text-[#81C3D7] (sky blue - secondary text and labels)
+  - Accent Text: text-[#3A7CA5] (medium blue - for links and interactive text)
+  - On Light Background: text-[#16425B] (navy - text when on light backgrounds)
+  - High Contrast: text-white (pure white - for maximum contrast when needed)
+
+- Interactive States:
+  - Primary CTA: bg-[#81C3D7] hover:bg-[#3A7CA5] (sky blue to medium blue)
+  - Secondary CTA: bg-[#3A7CA5] hover:bg-[#2F6690] (medium blue to slate blue)
+  - Destructive: bg-red-600 hover:bg-red-700 (standard error colors)
+  - Success: bg-green-600 hover:bg-green-700 (standard success colors)
+  - Warning: bg-yellow-600 hover:bg-yellow-700 (standard warning colors)
 
 Shape & Elevation Classes
 - Corner Radius: 
@@ -104,33 +112,47 @@ Shape & Elevation Classes
   - Level 5: shadow-2xl
 
 Typography Implementation
-- Display: text-5xl md:text-6xl font-normal tracking-tight
-- Headline: text-2xl md:text-3xl font-normal
-- Title: text-lg md:text-xl font-medium
-- Body: text-base font-normal
-- Label: text-sm font-medium
+- Display: text-5xl md:text-6xl font-normal tracking-tight text-[#D9DCD6]
+- Headline: text-2xl md:text-3xl font-normal text-[#D9DCD6]
+- Title: text-lg md:text-xl font-medium text-[#D9DCD6]
+- Body: text-base font-normal text-[#D9DCD6]
+- Label: text-sm font-medium text-[#81C3D7]
 
 Component Styling Patterns with Custom Dark Mode Palette
 MANDATORY: All components MUST use the custom dark mode palette exclusively:
-- Cards: bg-[#005F73] hover:bg-[#0A9396] rounded-xl shadow-md hover:shadow-lg transition-all
+
+- Cards: 
+  - bg-[#2F6690] hover:bg-[#3A7CA5] rounded-xl shadow-md hover:shadow-lg transition-all duration-200
+  - border border-[#81C3D7]/20 for subtle definition
+
 - Buttons: 
-  - Primary: bg-[#EE9B00] hover:bg-[#CA6702] text-[#001219] rounded-full px-6 py-3 font-medium
-  - Secondary: bg-[#0A9396] hover:bg-[#005F73] text-[#E9D8A6] rounded-full px-6 py-3 font-medium
-  - Outlined: border-2 border-[#94D2BD] text-[#94D2BD] hover:bg-[#0A9396] hover:text-[#001219] rounded-full px-6 py-3
-  - Danger: bg-[#BB3E03] hover:bg-[#AE2012] text-[#E9D8A6] rounded-full px-6 py-3
-- Navigation: bg-[#001219] with active states using bg-[#0A9396] and text-[#001219]
-- Form Controls: bg-[#005F73] border-2 border-[#0A9396] text-[#E9D8A6] focus:border-[#EE9B00] focus:ring-2 focus:ring-[#EE9B00]/20 rounded-lg
-- Success States: bg-[#94D2BD] text-[#001219]
-- Warning States: bg-[#EE9B00] text-[#001219] 
-- Error States: bg-[#BB3E03] text-[#E9D8A6]
-- Information States: bg-[#E9D8A6] text-[#001219]
+  - Primary: bg-[#81C3D7] hover:bg-[#3A7CA5] text-[#16425B] rounded-full px-6 py-3 font-medium shadow-md hover:shadow-lg active:scale-[0.98] transition-all duration-200
+  - Secondary: bg-[#3A7CA5] hover:bg-[#2F6690] text-[#D9DCD6] rounded-full px-6 py-3 font-medium shadow-md hover:shadow-lg active:scale-[0.98] transition-all duration-200
+  - Outlined: border-2 border-[#81C3D7] text-[#81C3D7] hover:bg-[#81C3D7] hover:text-[#16425B] rounded-full px-6 py-3 font-medium transition-all duration-200
+  - Destructive: bg-red-600 hover:bg-red-700 text-white rounded-full px-6 py-3 font-medium shadow-md hover:shadow-lg active:scale-[0.98] transition-all duration-200
+
+- Navigation: 
+  - bg-[#16425B] border-b border-[#2F6690]
+  - Active states: bg-[#3A7CA5] text-[#D9DCD6]
+  - Inactive states: text-[#81C3D7] hover:text-[#D9DCD6] hover:bg-[#2F6690]/50
+
+- Form Controls: 
+  - bg-[#2F6690] border-2 border-[#81C3D7]/30 text-[#D9DCD6] placeholder-[#81C3D7]/70
+  - focus:border-[#81C3D7] focus:ring-2 focus:ring-[#81C3D7]/20 focus:bg-[#3A7CA5]
+  - rounded-lg px-4 py-3
+
+- Status Indicators:
+  - Success: bg-green-600/20 text-green-300 border border-green-600/30
+  - Warning: bg-yellow-600/20 text-yellow-300 border border-yellow-600/30
+  - Error: bg-red-600/20 text-red-300 border border-red-600/30
+  - Info: bg-[#81C3D7]/20 text-[#81C3D7] border border-[#81C3D7]/30
 
 Interaction States with Custom Dark Mode Palette
-- Hover: hover:bg-[#0A9396] hover:shadow-md hover:scale-[1.02] transition-all duration-200
-- Focus: focus:ring-2 focus:ring-[#EE9B00]/40 focus:border-[#EE9B00] focus:outline-none
-- Active: active:scale-[0.98] active:bg-[#005F73] transition-transform duration-100
-- Disabled: opacity-50 cursor-not-allowed bg-[#005F73]/50
-- Loading States: animate-spin border-4 border-[#0A9396]/30 border-t-[#EE9B00]
+- Hover: hover:bg-[#3A7CA5] hover:shadow-md hover:scale-[1.02] transition-all duration-200
+- Focus: focus:ring-2 focus:ring-[#81C3D7]/40 focus:border-[#81C3D7] focus:outline-none
+- Active: active:scale-[0.98] active:bg-[#2F6690] transition-transform duration-100
+- Disabled: opacity-50 cursor-not-allowed bg-[#2F6690]/50 text-[#81C3D7]/50
+- Loading States: animate-spin border-4 border-[#2F6690]/30 border-t-[#81C3D7]
 
 REACT-RUNNER SPECIFIC RULES:
 - react-runner evaluates code strings in a sandboxed environment
@@ -147,7 +169,7 @@ CRITICAL JSX INTERPOLATION SYNTAX:
 - Currency display: Price: {'$'}{item.price}
 - String concatenation: {item.make + ' ' + item.model}
 - Conditional rendering: {condition ? value1 : value2}
-- Conditional classes: className={condition ? 'bg-blue-100' : 'bg-red-100'}
+- Conditional classes: className={condition ? 'bg-[#3A7CA5]' : 'bg-[#2F6690]'}
 - Always use className, never class
 - NEVER use dollar-curly syntax (${variable}) in JSX - this causes syntax errors
 - NEVER use template literals in JSX content or attributes
@@ -184,14 +206,17 @@ CRITICAL RESPONSIVE DESIGN REQUIREMENTS:
 JSON PAYLOAD HANDLING:
 Before using the response, always implement this pattern:
 
+JAVASCRIPT CODE START
 const response = await fetch('/api/get-data?endpoint=' + encodeURIComponent('ORIGINAL_API_ENDPOINT'));
 if (!response.ok) throw new Error('Failed to fetch data');
 const result = await response.json();
 const payload = result && result.data !== undefined ? result.data : result;
 setData(payload);
+JAVASCRIPT CODE END
 
 EXAMPLE STRUCTURE FOR REACT-RUNNER WITH MATERIAL DESIGN 3:
 
+JAVASCRIPT CODE START
 function GeneratedDataComponent() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -221,30 +246,30 @@ function GeneratedDataComponent() {
   
   if (loading) {
     return (
-      <div className="flex flex-col items-center justify-center p-8 min-h-64 bg-[#001219]">
-        <div className="animate-spin rounded-full h-12 w-12 border-4 border-[#0A9396]/30 border-t-[#EE9B00] mb-4"></div>
-        <span className="text-lg font-medium text-[#94D2BD]">Loading...</span>
+      <div className="flex flex-col items-center justify-center p-8 min-h-64 bg-[#16425B]">
+        <div className="animate-spin rounded-full h-12 w-12 border-4 border-[#2F6690]/30 border-t-[#81C3D7] mb-4"></div>
+        <span className="text-lg font-medium text-[#81C3D7]">Loading...</span>
       </div>
     );
   }
   
   if (error) {
     return (
-      <div className="p-6 bg-[#BB3E03]/20 border-2 border-[#BB3E03] rounded-xl">
+      <div className="p-6 bg-red-600/20 border-2 border-red-600/30 rounded-xl">
         <div className="flex items-center">
-          <div className="w-8 h-8 bg-[#BB3E03] rounded-full flex items-center justify-center mr-3">
-            <span className="text-[#E9D8A6] text-sm font-bold">!</span>
+          <div className="w-8 h-8 bg-red-600 rounded-full flex items-center justify-center mr-3">
+            <span className="text-white text-sm font-bold">!</span>
           </div>
-          <p className="text-[#E9D8A6] font-medium">Error: {error}</p>
+          <p className="text-red-300 font-medium">Error: {error}</p>
         </div>
       </div>
     );
   }
   
   return (
-    <div className="p-6 bg-[#001219] min-h-screen">
+    <div className="p-6 bg-[#16425B] min-h-screen">
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-3xl md:text-4xl font-normal tracking-tight text-[#E9D8A6] mb-8">
+        <h1 className="text-3xl md:text-4xl font-normal tracking-tight text-[#D9DCD6] mb-8">
           Product Catalog
         </h1>
         
@@ -252,92 +277,17 @@ function GeneratedDataComponent() {
           {data.map((item) => (
             <div 
               key={item.id} 
-              className="bg-[#005F73] hover:bg-[#0A9396] rounded-xl shadow-md hover:shadow-lg hover:scale-[1.02] transition-all duration-200 p-6"
+              className="bg-[#2F6690] hover:bg-[#3A7CA5] rounded-xl shadow-md hover:shadow-lg hover:scale-[1.02] transition-all duration-200 p-6 border border-[#81C3D7]/20"
             >
-              <h2 className="text-xl font-medium text-[#E9D8A6] mb-2">
+              <h2 className="text-xl font-medium text-[#D9DCD6] mb-2">
                 {item.name}
               </h2>
-              <p className="text-base text-[#94D2BD] mb-4">
-                Price: {'
-
-RESPONSE FORMAT REQUIREMENTS:
-- MUST start IMMEDIATELY with: function GeneratedDataComponent() {
-- MUST end IMMEDIATELY with: }
-- DO NOT include triple backticks, markdown code fences, or any wrapper text
-- DO NOT include any explanatory text before or after the function
-- The complete response must be ready to use directly as: const componentCode = `YOUR_ENTIRE_RESPONSE_HERE`;
-
-CUSTOM DARK MODE PALETTE VALIDATION CHECKLIST:
-- No import/export statements
-- No 'use client' directive
-- No template literals with backticks in JSX content or attributes
-- MANDATORY: All components use the custom dark mode color palette exclusively
-- Background hierarchy: #001219 (primary) → #005F73 (secondary) → #0A9396 (tertiary)
-- Text colors: #E9D8A6 (primary text), #94D2BD (secondary text), #001219 (on-accent text)
-- Accent colors: #EE9B00 (primary CTA), #CA6702 (secondary), #BB3E03 (warnings), #AE2012 (errors)
-- Typography scale follows Material Design 3 specifications
-- Shape system applied consistently (corner radius, elevation)
-- Proper surface hierarchy using the custom color palette
-- Accessible contrast ratios maintained (minimum 4.5:1)
-- Interactive states implemented with palette colors (hover, focus, active, disabled)
-- Smooth transitions and micro-interactions included
-- Responsive grid layouts following Material Design 3 patterns
-- Loading and error states styled with custom palette colors
-- Component adapts layout to JSON structure while maintaining the dark mode theme
-- Uses theme-appropriate styling from the custom palette based on received data
-- Proper spacing using Material Design 3 spacing scale
-- Focus indicators and keyboard navigation support with palette colors
-- NO light mode classes (no bg-white, text-black, etc.) - dark mode only
-- All colors use exact hex values from the provided palette
-
-REACT-RUNNER USAGE CONTEXT:
-The generated component will be used like this:
-
-import { Runner } from 'react-runner';
-
-const scope = {
-  React,
-  useState: React.useState,
-  useEffect: React.useEffect,
-  useMemo: React.useMemo,
-  useCallback: React.useCallback,
-};
-
-<Runner code={generatedComponentString} scope={scope} />
-
-IMPORTANT REACT-RUNNER CONSTRAINTS:
-- The component code is executed in a sandboxed JavaScript environment
-- Template literals with backticks can cause parsing errors in react-runner
-- Only the hooks provided in the scope are available (no imports)
-- The fetch() API is available globally for HTTP requests
-- All external dependencies must be provided via the scope prop
-- The component function is called directly by react-runner
-- No module system (CommonJS/ES6) is available
-- Component must be completely self-contained
-- Error boundaries are handled by the parent ReactRunnerRenderer
-- The component should handle its own loading, error, and empty states
-- Always use the /api/get-data proxy for security and CORS handling
-- Use direct JSX interpolation instead of template literals for better compatibility
-
-CRITICAL OUTPUT FORMAT REQUIREMENT:
-Your response must start IMMEDIATELY with:
-function GeneratedDataComponent() {
-
-And end IMMEDIATELY with:
-}
-
-DO NOT include:
-- Markdown code fence start or end
-- Any explanatory text before or after the function
-- Any markdown formatting whatsoever
-- Any wrapper or container text
-
-The complete response must be ready to use directly as:
-const componentCode = backtick + YOUR_ENTIRE_RESPONSE_HERE + backtick;}{item.price}
+              <p className="text-base text-[#81C3D7] mb-4">
+                Price: {'$'}{item.price}
               </p>
               <button 
                 onClick={() => setSelectedItem(item)}
-                className="bg-[#EE9B00] hover:bg-[#CA6702] active:scale-[0.98] text-[#001219] rounded-full px-6 py-3 font-medium transition-all duration-200 focus:ring-2 focus:ring-[#EE9B00]/40 focus:outline-none"
+                className="bg-[#81C3D7] hover:bg-[#3A7CA5] active:scale-[0.98] text-[#16425B] rounded-full px-6 py-3 font-medium transition-all duration-200 focus:ring-2 focus:ring-[#81C3D7]/40 focus:outline-none shadow-md hover:shadow-lg"
               >
                 View Details
               </button>
@@ -346,87 +296,17 @@ const componentCode = backtick + YOUR_ENTIRE_RESPONSE_HERE + backtick;}{item.pri
         </div>
         
         {selectedItem && (
-          <div className="fixed inset-0 bg-[#001219]/80 backdrop-blur-sm flex items-center justify-center p-4 z-50">
-            <div className="bg-[#005F73] rounded-2xl shadow-2xl p-8 max-w-md w-full transform scale-100 transition-transform border border-[#0A9396]">
-              <h3 className="text-2xl font-medium text-[#E9D8A6] mb-4">
+          <div className="fixed inset-0 bg-[#16425B]/80 backdrop-blur-sm flex items-center justify-center p-4 z-50">
+            <div className="bg-[#2F6690] rounded-2xl shadow-2xl p-8 max-w-md w-full transform scale-100 transition-transform border border-[#81C3D7]/30">
+              <h3 className="text-2xl font-medium text-[#D9DCD6] mb-4">
                 {selectedItem.name}
               </h3>
-              <p className="text-lg text-[#94D2BD] mb-6">
-                Price: {'
-
-RESPONSE FORMAT REQUIREMENTS:
-- MUST start IMMEDIATELY with: function GeneratedDataComponent() {
-- MUST end IMMEDIATELY with: }
-- DO NOT include triple backticks, markdown code fences, or any wrapper text
-- DO NOT include any explanatory text before or after the function
-- The complete response must be ready to use directly as: const componentCode = `YOUR_ENTIRE_RESPONSE_HERE`;
-
-MATERIAL DESIGN 3 VALIDATION CHECKLIST:
-- No import/export statements
-- No 'use client' directive
-- No template literals with backticks in JSX content or attributes
-- Material Design 3 color system implemented with appropriate Tailwind classes
-- Typography scale follows Material Design 3 specifications
-- Shape system applied consistently (corner radius, elevation)
-- Proper surface hierarchy and tinting
-- Accessible contrast ratios maintained
-- Interactive states implemented (hover, focus, active, disabled)
-- Smooth transitions and micro-interactions included
-- Responsive grid layouts following Material Design 3 patterns
-- Loading and error states styled with Material Design 3
-- Component adapts layout to JSON structure while maintaining Material Design 3 principles
-- Uses theme-appropriate Material Design 3 styling based on received data
-- Proper spacing using Material Design 3 spacing scale
-- Focus indicators and keyboard navigation support
-
-REACT-RUNNER USAGE CONTEXT:
-The generated component will be used like this:
-
-import { Runner } from 'react-runner';
-
-const scope = {
-  React,
-  useState: React.useState,
-  useEffect: React.useEffect,
-  useMemo: React.useMemo,
-  useCallback: React.useCallback,
-};
-
-<Runner code={generatedComponentString} scope={scope} />
-
-IMPORTANT REACT-RUNNER CONSTRAINTS:
-- The component code is executed in a sandboxed JavaScript environment
-- Template literals with backticks can cause parsing errors in react-runner
-- Only the hooks provided in the scope are available (no imports)
-- The fetch() API is available globally for HTTP requests
-- All external dependencies must be provided via the scope prop
-- The component function is called directly by react-runner
-- No module system (CommonJS/ES6) is available
-- Component must be completely self-contained
-- Error boundaries are handled by the parent ReactRunnerRenderer
-- The component should handle its own loading, error, and empty states
-- Always use the /api/get-data proxy for security and CORS handling
-- Use direct JSX interpolation instead of template literals for better compatibility
-
-CRITICAL OUTPUT FORMAT REQUIREMENT:
-Your response must start IMMEDIATELY with:
-function GeneratedDataComponent() {
-
-And end IMMEDIATELY with:
-}
-
-DO NOT include:
-- Markdown code fence start or end
-- Any explanatory text before or after the function
-- Any markdown formatting whatsoever
-- Any wrapper or container text
-
-The complete response must be ready to use directly as:
-const componentCode = backtick + YOUR_ENTIRE_RESPONSE_HERE + backtick;}{selectedItem.price}
+              <p className="text-lg text-[#81C3D7] mb-6">
+                Price: {'$'}{selectedItem.price}
               </p>
               <button 
                 onClick={() => setSelectedItem(null)}
-                className="border-2 border-[#94D2BD] text-[#94D2BD] hover:bg-[#0A9396] hover:text-[#001219] rounded-full px-6 py-3 font-medium transition-all duration-200 focus:ring-2 focus:ring-[#94D2BD]/40 focus:outline-none"
+                className="border-2 border-[#81C3D7] text-[#81C3D7] hover:bg-[#81C3D7] hover:text-[#16425B] rounded-full px-6 py-3 font-medium transition-all duration-200 focus:ring-2 focus:ring-[#81C3D7]/40 focus:outline-none"
               >
                 Close
               </button>
@@ -437,35 +317,42 @@ const componentCode = backtick + YOUR_ENTIRE_RESPONSE_HERE + backtick;}{selected
     </div>
   );
 }
+JAVASCRIPT CODE END
 
 RESPONSE FORMAT REQUIREMENTS:
 - MUST start IMMEDIATELY with: function GeneratedDataComponent() {
 - MUST end IMMEDIATELY with: }
 - DO NOT include triple backticks, markdown code fences, or any wrapper text
 - DO NOT include any explanatory text before or after the function
-- The complete response must be ready to use directly as: const componentCode = `YOUR_ENTIRE_RESPONSE_HERE`;
+- The complete response must be ready to use directly as: const componentCode = YOUR_ENTIRE_RESPONSE_HERE;
 
-MATERIAL DESIGN 3 VALIDATION CHECKLIST:
+CUSTOM DARK MODE PALETTE VALIDATION CHECKLIST:
 - No import/export statements
 - No 'use client' directive
 - No template literals with backticks in JSX content or attributes
-- Material Design 3 color system implemented with appropriate Tailwind classes
+- MANDATORY: All components use the custom dark mode color palette exclusively from screenshot
+- Background hierarchy: #16425B (primary) → #2F6690 (secondary) → #3A7CA5 (tertiary) → #D9DCD6 (neutral contrast)
+- Text colors: #D9DCD6 (primary text), #81C3D7 (secondary text), #16425B (on-light text)
+- Interactive colors: #81C3D7 (primary CTA), #3A7CA5 (secondary CTA), standard semantic colors for states
 - Typography scale follows Material Design 3 specifications
 - Shape system applied consistently (corner radius, elevation)
-- Proper surface hierarchy and tinting
-- Accessible contrast ratios maintained
-- Interactive states implemented (hover, focus, active, disabled)
+- Proper surface hierarchy using the custom color palette
+- Accessible contrast ratios maintained (minimum 4.5:1) - verified for this palette
+- Interactive states implemented with palette colors (hover, focus, active, disabled)
 - Smooth transitions and micro-interactions included
 - Responsive grid layouts following Material Design 3 patterns
-- Loading and error states styled with Material Design 3
-- Component adapts layout to JSON structure while maintaining Material Design 3 principles
-- Uses theme-appropriate Material Design 3 styling based on received data
+- Loading and error states styled with custom palette colors
+- Component adapts layout to JSON structure while maintaining the dark mode theme
+- Uses theme-appropriate styling from the custom palette based on received data
 - Proper spacing using Material Design 3 spacing scale
-- Focus indicators and keyboard navigation support
+- Focus indicators and keyboard navigation support with palette colors
+- NO light mode classes (no bg-white, text-black, etc.) - dark mode only
+- All colors use exact hex values from the provided palette: #2F6690, #3A7CA5, #D9DCD6, #16425B, #81C3D7
 
 REACT-RUNNER USAGE CONTEXT:
 The generated component will be used like this:
 
+```javascript
 import { Runner } from 'react-runner';
 
 const scope = {
@@ -477,6 +364,7 @@ const scope = {
 };
 
 <Runner code={generatedComponentString} scope={scope} />
+```
 
 IMPORTANT REACT-RUNNER CONSTRAINTS:
 - The component code is executed in a sandboxed JavaScript environment

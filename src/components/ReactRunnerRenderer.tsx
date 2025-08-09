@@ -3,22 +3,12 @@
 import React, { useState, useEffect } from "react";
 import { Runner } from "react-runner";
 import { AIComponentResponse } from "@/lib/types";
-import { TestStringComponent } from "./TestStringComponent";
 
 interface ReactRunnerRendererProps {
   aiResponse: AIComponentResponse;
-  data?: any;
   className?: string;
 }
 
-const LoadingSpinner = () => (
-  <div className="flex items-center justify-center p-8">
-    <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-black dark:border-white"></div>
-    <span className="ml-3 text-sm text-black/60 dark:text-white/60">
-      Loading AI-generated content...
-    </span>
-  </div>
-);
 
 const ErrorFallback = ({ error }: { error: string }) => (
   <div className="flex flex-col items-center justify-center p-8 border border-red-200 dark:border-red-800 rounded-lg bg-red-50 dark:bg-red-900/20">
@@ -51,7 +41,6 @@ const ErrorFallback = ({ error }: { error: string }) => (
  */
 export default function ReactRunnerRenderer({
   aiResponse,
-  data = [],
   className = "",
 }: ReactRunnerRendererProps) {
   const [error, setError] = useState<string | null>(null);
@@ -86,7 +75,6 @@ export default function ReactRunnerRenderer({
   try {
     return (
       <div className={`relative ${className}`}>
-        {/* <Runner code={TestStringComponent} scope={scope} /> */}
         <Runner code={aiResponse.component} scope={scope} />
 
         {error && <ErrorFallback error={error} />}
